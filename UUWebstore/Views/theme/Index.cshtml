@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UUWebstore.Models.theme>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
+
+
+<h4 class="page-header">Themes</h4>    
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <div>
+                <a herf="@item.DemoSiteURl"><img src='@item.themeImage' height="300px" width="200px" /></a>
+            </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.name)
+            </div>           
+            <div>
+                @Html.DisplayFor(modelItem => item.fontFamily)
+            </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.webURL)
+            </div>
+            <button value="View Demo">View Demo</button><button value="Apply" onclick="applytheme(@item.themeId)">Apply</button>
+        </li>
+    }
+</ul>
+
+<script>
+    function applytheme(themeId)
+    {
+       
+        $.ajax({
+            url: '/theme/applytheme',
+            type: 'POST',
+            data: { 'themeId': themeId },
+            success: function (data) {
+                debugger
+                if (data == 1) {
+                    bootbox.confirm({
+                        title: "Confirmation !",
+                        message: "Theme applied.",                       
+                       
+                           
+                       
+                    })
+                    window.location.href = window.location
+                }
+                else {
+                    bootbox.alert({
+                        title: "Alert !",
+                        message: '<p>Some thing went wrong .</p>',
+                        timeOut: 2000
+                    });
+
+                }
+            },
+            error: function ()
+            {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Some thing went wrong .</p>',
+                    timeOut: 2000
+                });
+            }
+        });
+    }
+</script>

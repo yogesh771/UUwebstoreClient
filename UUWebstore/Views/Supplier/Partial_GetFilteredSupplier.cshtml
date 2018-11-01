@@ -1,0 +1,152 @@
+﻿@model IEnumerable<UUWebstore.Models.get_filterSuppliers_Result>
+
+
+<table class="table" id="tblData">
+    <thead>
+        <tr>
+            <th><img src="~/images/arrow.jpg" width="27" height="34"></th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.fullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.emailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.cityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.countryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.supplierCategoryOptions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @{
+        var a = Model.Count();
+
+    }
+    <tbody>
+        @if (a == 0)
+        {
+            <tr>
+                <td colspan="15">
+                    No Result Found
+                </td>
+            </tr>
+        }
+        @{  int i = 0; }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(i += 1)</td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phone)<br />@Html.DisplayFor(modelItem => item.mobile)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.emailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.website)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)<br />@Html.DisplayFor(modelItem => item.location)<br />@Html.DisplayFor(modelItem => item.zipcode)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.cityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.countryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.supplierCategoryOptions)
+                </td>
+                <td>
+                <td><input type="checkbox" id='chk_@item.userId' onclick="SelectSupplier(@item.userId)" @(Convert.ToBoolean(@item.MySupplier) == true ? "checked='checked'" : string.Empty) /></td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $(function () {
+        $("#tblData").slimtable({
+            tableData: null,
+            dataUrl: null,
+            itemsPerPage: 100,
+            ipp_list: [10, 50, 100],
+            colSettings: [],
+            text1: "items/page",
+            text2: "Loading...",
+            sortStartCB: null,
+            sortEndCB: null,
+            aoColumnDefs: [{
+                'bSortable': false,
+                'aTargets': [-1] /* 1st one, start by the right */
+            }]
+        });
+    });
+</script>
+
+<script>
+    function SelectSupplier(id)
+    {
+        var checkbox = document.getElementById('chk_' + id);
+        var chk=false;
+        if (checkbox.checked) {
+            chk = true
+        }
+        debugger
+        $.ajax({
+            url: '/Supplier/SelectSupplier',
+            type: 'POST',
+            data: { 'UserId': id, 'chk': chk },
+            success: function (data) {
+                if (data==1)
+                {
+                    bootbox.alert({
+                        title: "Success !",
+                        message: chk == true ? '<p>Supplier added in your List.</p>' : '<p>Supplier removed from your List.</p>',
+                        timeOut: 2000
+
+                    });
+                }
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+
+    }
+</script>

@@ -1,0 +1,249 @@
+D:\Project\UUWebstore\UUWebstore\obj\Debug\UUWebstore.csprojResolveAssemblyReference.cache
+D:\Project\UUWebstore\UUWebstore\bin\ApplicationInsights.config
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\csc.exe
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\vbc.exe
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\VBCSCompiler.exe
+D:\Project\UUWebstore\UUWebstore\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\UUWebstore\UUWebstore\bin\UUWebstore.dll.config
+D:\Project\UUWebstore\UUWebstore\bin\UUWebstore.dll
+D:\Project\UUWebstore\UUWebstore\bin\UUWebstore.pdb
+D:\Project\UUWebstore\UUWebstore\bin\Antlr3.Runtime.dll
+D:\Project\UUWebstore\UUWebstore\bin\EntityFramework.dll
+D:\Project\UUWebstore\UUWebstore\bin\EntityFramework.SqlServer.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.Web.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.ApplicationInsights.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\UUWebstore\UUWebstore\bin\Newtonsoft.Json.dll
+D:\Project\UUWebstore\UUWebstore\bin\Owin.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Helpers.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Mvc.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Optimization.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Razor.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.Deployment.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.dll
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.Razor.dll
+D:\Project\UUWebstore\UUWebstore\bin\WebGrease.dll
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.Web.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.ApplicationInsights.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Helpers.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Mvc.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Optimization.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.Razor.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.Deployment.xml
+D:\Project\UUWebstore\UUWebstore\bin\System.Web.WebPages.Razor.xml
+D:\Project\UUWebstore\UUWebstore\bin\Antlr3.Runtime.pdb
+D:\Project\UUWebstore\UUWebstore\bin\Newtonsoft.Json.xml
+D:\Project\UUWebstore\UUWebstore\bin\EntityFramework.xml
+D:\Project\UUWebstore\UUWebstore\bin\EntityFramework.SqlServer.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\UUWebstore\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\UUWebstore\UUWebstore\obj\Debug\UUWebstore.dll
+D:\Project\UUWebstore\UUWebstore\obj\Debug\UUWebstore.pdb
+D:\Project\uuWebStoreNew\UUWebstore\bin\ApplicationInsights.config
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\csc.exe
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\vbc.exe
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\VBCSCompiler.exe
+D:\Project\uuWebStoreNew\UUWebstore\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\uuWebStoreNew\UUWebstore\bin\UUWebstore.dll.config
+D:\Project\uuWebStoreNew\UUWebstore\bin\UUWebstore.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\UUWebstore.pdb
+D:\Project\uuWebStoreNew\UUWebstore\bin\Antlr3.Runtime.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\EntityFramework.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\EntityFramework.SqlServer.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.Web.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.ApplicationInsights.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Newtonsoft.Json.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Owin.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Helpers.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Mvc.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Optimization.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Razor.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.Deployment.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.Razor.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\WebGrease.dll
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.Web.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.ApplicationInsights.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Helpers.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Mvc.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Optimization.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.Razor.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.Deployment.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\System.Web.WebPages.Razor.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Antlr3.Runtime.pdb
+D:\Project\uuWebStoreNew\UUWebstore\bin\Newtonsoft.Json.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\EntityFramework.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\EntityFramework.SqlServer.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\uuWebStoreNew\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\uuWebStoreNew\UUWebstore\obj\Debug\UUWebstore.csprojResolveAssemblyReference.cache
+D:\Project\uuWebStoreNew\UUWebstore\obj\Debug\UUWebstore.dll
+D:\Project\uuWebStoreNew\UUWebstore\obj\Debug\UUWebstore.pdb
+D:\Project\uuWebStoreNew - Client\UUWebstore\obj\Debug\UUWebstore.csprojResolveAssemblyReference.cache
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\ApplicationInsights.config
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\csc.exe
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\vbc.exe
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\VBCSCompiler.exe
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\UUWebstore.dll.config
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\UUWebstore.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\UUWebstore.pdb
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Antlr3.Runtime.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\EntityFramework.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\EntityFramework.SqlServer.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.Web.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.ApplicationInsights.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Newtonsoft.Json.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Owin.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\SendGrid.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Helpers.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Mvc.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Optimization.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Razor.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.Deployment.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.Razor.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\WebGrease.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.Web.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.ApplicationInsights.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Newtonsoft.Json.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\SendGrid.pdb
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\SendGrid.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Helpers.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Mvc.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Optimization.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.Razor.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.Deployment.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\System.Web.WebPages.Razor.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Antlr3.Runtime.pdb
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\EntityFramework.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\EntityFramework.SqlServer.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\uuWebStoreNew - Client\UUWebstore\obj\Debug\UUWebstore.dll
+D:\Project\uuWebStoreNew - Client\UUWebstore\obj\Debug\UUWebstore.pdb

@@ -1,0 +1,168 @@
+﻿@model IEnumerable<UUWebstore.Models.getProductList_sp_Result>
+
+<table class="table" id="tblData">
+    <thead>
+        <tr>
+            <th><img src="~/images/arrow.jpg" width="27" height="34"></th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productTitle)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.brandId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isActive)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.imgWebAddress)
+            </th>
+         <th>In My List</th>
+            <th>Featured</th>
+        </tr>
+    </thead>
+    @{
+        var a = Model.Count();
+
+    }
+    <tbody>
+        @if (a == 0)
+        {
+            <tr>
+                <td colspan="15">
+                    No Result Found
+                </td>
+            </tr>
+        }
+        @{  int i = 0; }
+        @foreach (var item in Model)
+        {
+            <tr><td>@(i += 1)</td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sku)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productTitle)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.brandId)
+                </th>              
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.isActive)
+                </td>
+                <td>
+                    <img src=@item.imgWebAddress />
+                </td>  
+                <td><input type="checkbox" id='chk1_@item.productId' onclick="SelectProduct(@item.productId)" @(Convert.ToBoolean(@item.isMySelected) == true ? "checked='checked'" : string.Empty) /></td>
+                <td><input type="checkbox" id='chk_@item.productId' onclick="makeFeaturedProduct(@item.productId)" @(Convert.ToBoolean(@item.isFeaturedProduct) == true ? "checked='checked'" : string.Empty) /></td>
+                             
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $(function () {
+        $("#tblData").slimtable({
+            tableData: null,
+            dataUrl: null,
+            itemsPerPage: 100,
+            ipp_list: [10, 50, 100],
+            colSettings: [],
+            text1: "items/page",
+            text2: "Loading...",
+            sortStartCB: null,
+            sortEndCB: null,
+            aoColumnDefs: [{
+                'bSortable': false,
+                'aTargets': [-1] /* 1st one, start by the right */
+            }]
+        });
+    });
+</script>
+<script>
+    function makeFeaturedProduct(id)
+    {
+        var checkbox = document.getElementById('chk_' + id);
+        var chk=false;
+        if (checkbox.checked) {
+            chk = true
+        }
+        debugger
+        $.ajax({
+            url: '/Products/makeFeaturedProduct',
+            type: 'POST',
+            data: { 'productId': id, 'chk': chk },
+            success: function (data) {
+                if (data)
+                {
+                    bootbox.alert({
+                        title: "Success !",
+                        message: chk == true ? '<p>Product updated as featured product.</p>' : '<p>Product removed from featured product.</p>',
+                        timeOut: 2000
+
+                    });
+                }
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+
+    }
+</script>
+<script>
+    function SelectProduct(id)
+    {
+        var checkbox = document.getElementById('chk1_' + id);
+        var chk=false;
+        if (checkbox.checked) {
+            chk = true
+        }
+        debugger
+        $.ajax({
+            url: '/Products/SelectProduct',
+            type: 'POST',
+            data: { 'productId': id, 'chk': chk },
+            success: function (data) {
+                if (data==1)
+                {
+                    bootbox.alert({
+                        title: "Success !",
+                        message: chk == true ? '<p>Product Category added in your List.</p>' : '<p>Product Category removed from your List.</p>',
+                        timeOut: 2000
+
+                    });
+                }
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+
+    }
+</script>

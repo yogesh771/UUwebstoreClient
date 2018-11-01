@@ -1,0 +1,168 @@
+﻿<link href="~/Content/slimtable.css" rel="stylesheet" />
+<script src="~/Scripts/slimtable.js"></script>
+<h2>Products</h2>
+<div class="form-horizontal">
+
+    <h4 class="page-header">search</h4>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="ddl_filterCategory">
+                    <option value="1">Featured</option>
+                    <option value="0">All</option>                   
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.DropDownList("productCategoryId", null,"Product Categories", new { @class = "form-control", onChange = "fillSubCategories()" })               
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.DropDownList("productSubCategoryId", null,"Product Subcategories", new { @class = "form-control" })
+            </div>
+        </div>
+      
+        <div class="col-md-5" id="div_id" >
+            <div class="form-group">
+                @Html.DropDownList("cateoryDDlValue", null, new { @class = "form-control", @id = "ddl_filter_AutoAll" })
+                <input type="button" value="Make Website Referrence" class="btn btn-default" onclick="MakeWebsiteReferrence()" />
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="button" value="Search" class="btn btn-default" onclick="searchResult()" />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="table-responsive col-lg-12" id="viewResult">
+    <div class="col-lg-12 white-box">
+        <p>Please use above search criteria to view the result list</p>
+    </div>
+</div>
+<script>
+    function callFun()
+    {
+        var ddl_filter = $("#ddl_filterCategory").val();
+        if (ddl_filter == 1)
+        {
+          document.getElementById('div_id').style.display='block'
+        }
+        else {
+            document.getElementById('div_id').style.display = 'none'
+        }
+    }
+</script>
+<script>
+    $('#ddl_filterCategory').on('change', function () {
+        ddl_filter = $("#ddl_filterCategory").val();
+        $("#productSubCategoryId").val('');
+        if (ddl_filter != "") {
+            debugger
+            $.ajax({
+                url: '/Products/fillProductCategories',
+                type: 'GET',
+                data: { 'ddl_filter': ddl_filter },
+                success: function (result) {
+
+                    $("#productCategoryId").html("");
+                    $("#productCategoryId").append($('<option></option>').val('').html('Product Categories'));
+                    $.each($.parseJSON(result), function (i, VSC) {
+                        $("#productCategoryId").append($('<option></option>').val(VSC.proCategoryId).html(VSC.name))
+                    })
+
+                },
+                error: function () {
+
+                    bootbox.alert({
+                        title: "Alert !",
+                        message: '<p>Whooaaa! Something went wrong..</p>',
+                        timeOut: 2000
+
+                    });
+                },
+            });
+        }
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        searchResult()
+    })
+
+</script>
+<script>
+
+    function searchResult() {
+
+        var ddl_filterCategory = $("#ddl_filterCategory").val();
+        var productCategoryId = $("#productCategoryId").val() == '' ? 0 : $("#productCategoryId").val();
+        var productSubCategoryId = $("#productSubCategoryId").val() == '' ? 0 : $("#productSubCategoryId").val();
+        var cateoryDDlValue = $("#ddl_filter_AutoAll").val();
+        $.ajax({
+            url: '/Products/Partial_SearchProductsReult',
+            type: 'POST',
+            data: { 'productOptions_All_featured': ddl_filterCategory, 'productCategoryId': productCategoryId, 'productSubCategoryId': productSubCategoryId, 'cateoryDDlValue': cateoryDDlValue },
+            success: function (data) {
+                debugger
+                $('#viewResult').html(data);
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+    }
+</script>
+<script>
+    function MakeWebsiteReferrence()
+    {
+        var ddl_filter_AutoAll = $("#ddl_filter_AutoAll").val();
+
+        debugger
+        $.ajax({
+            url: '/websetting/SaveAdminFeaturedReferrence',
+            type: 'POST',
+            data: { 'ddl_filter_AutoAll': ddl_filter_AutoAll, 'categoryType': 2},
+            success: function (data) {
+                if (data) {
+                    bootbox.alert({
+                        title: "Success !",
+                        message: '<p>Your referrence for website is saved</p>',
+                        timeOut: 2000
+
+                    });
+                } else {
+                    bootbox.alert({
+                        title: "Alert !",
+                        message: '<p>Whooaaa! Something went wrong..</p>',
+                        timeOut: 2000
+
+                    });
+                }
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+    }
+</script>

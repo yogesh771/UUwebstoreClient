@@ -1,0 +1,124 @@
+﻿@model UUWebstore.Models.banner
+
+
+@using (Html.BeginForm("Edit", "websetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>banner</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.bannerId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.srNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.srNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.srNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+
+                <div class="col-md-9 choose-img">
+                    <img id="pic" src='@Model.bannerImgURL' alt="Logo" width="300px" height="200px">
+                    <input type="file" id="photoA" name="file" class="choose-input">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.isActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.isActive)
+                    @Html.ValidationMessageFor(model => model.isActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+      
+        @Html.HiddenFor(model => model.bannerImgURL)
+ 
+                @Html.HiddenFor(model => model.createdBy)
+                @Html.HiddenFor(model => model.createdDate)      
+                 @Html.HiddenFor(model => model.isDelete)
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "availablebanners")
+</div>
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            //Get reference of FileUpload.
+            var fileUpload = document.getElementById("photoA");
+            if (fileUpload.value.length > 0) {
+                //Check whether the file is valid Image.
+                var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif)$");
+                if (regex.test(fileUpload.value.toLowerCase())) {
+                    var reader = new FileReader();
+                    var s = fileUpload.files[0];
+                    reader.readAsDataURL(s);
+                    reader.onload = function (e) {
+                        var image = new Image();
+                        image.src = e.target.result;
+                        image.onload = function () {
+
+                            var height = this.height;
+                            var width = this.width;
+                            if (height > 200 || width > 200) {
+
+
+                                bootbox.alert({
+                                    title: "Alert !",
+                                    message: 'Height and Width must not exceed 200px.'
+                                });
+                                return false;
+                            }
+                            else {
+
+                                var reader1 = new FileReader();
+
+                                reader1.onload = function (e) {
+                                    $('#pic').attr('src', e.target.result);
+                                }
+
+                                reader1.readAsDataURL(input.files[0]);
+                            }
+                        };
+                    }
+                }
+                else {
+
+                    bootbox.alert({
+                        title: "Alert !",
+                        message: 'Please select .jpg,.png,.gif'
+                    });
+                    return false;
+                }
+            }
+
+        }
+    }
+
+    $("#photoA").change(function () {
+        readURL(this);
+    });
+</script>
