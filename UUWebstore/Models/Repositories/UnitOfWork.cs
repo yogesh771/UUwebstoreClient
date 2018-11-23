@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using UUWebstore.Models;
 
 namespace UUWebstore.Models.Repositories
 {
@@ -179,6 +175,26 @@ namespace UUWebstore.Models.Repositories
                 if (this._productForClient == null)
                     this._productForClient = new Repositories<productForClient>(db);
                 return _productForClient;
+            }
+        }
+        private Repositories<ProductOrder> _productOrder { get; set; }
+        public Repositories<ProductOrder> productOrder
+        {
+            get
+            {
+                if (this._productOrder == null)
+                    this._productOrder = new Repositories<ProductOrder>(db);
+                return _productOrder;
+            }
+        }
+        private Repositories<ContactU> _ContactU { get; set; }
+        public Repositories<ContactU> ContactU_
+        {
+            get
+            {
+                if (this._ContactU == null)
+                    this._ContactU = new Repositories<ContactU>(db);
+                return _ContactU;
             }
         }
         public void Dispose()

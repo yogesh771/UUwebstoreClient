@@ -1,6 +1,6 @@
-﻿
+﻿@using UUWebstore.Models;
 @{
-    ViewBag.Title = "browseLogo";
+  
     Layout = "~/Views/Shared/_LayoutInternal.cshtml";
 }
 
@@ -9,6 +9,7 @@
 @using (Html.BeginForm("browseLogo", "theme", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    <div class="col-md-12"><label>Note: Try to upload Logo of size 120x27 </label></div>
     <div class="col-md-12">
         <div class="form-group">
           
@@ -46,12 +47,11 @@
 
                             var height = this.height;
                             var width = this.width;
-                            if (height > 200 || width > 200) {
-
+                            if (height != 120 || width != 27) {
 
                                 bootbox.alert({
                                     title: "Alert !",
-                                    message: 'Height and Width must not exceed 200px.'
+                                    message: 'Try to upload Logo of size 120x27'
                                 });
                                 return false;
                             }

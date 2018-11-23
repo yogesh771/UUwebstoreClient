@@ -36,5 +36,14 @@ namespace UUWebstore.Models
         public System.DateTime modifiedDate { get; set; }
         public bool isActive { get; set; }
         public bool isDelete { get; set; }
+        public string Facebook { get; set; }
+        public string GPlus { get; set; }
+        public string Twiter { get; set; }
+        public string YouTube { get; set; }
+        public string Instagram { get; set; }
+        public string pinterest { get; set; }
+        public string LinkedIn { get; set; }
+        public string youTubePramotionAdmin { get; set; }
+        public string BlockPramotionAdmin { get; set; }
     }
 }

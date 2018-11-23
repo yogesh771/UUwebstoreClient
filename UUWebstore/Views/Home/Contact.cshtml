@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using UUWebstore.Models;
+<div class="col-lg-12">
+    <div class="col-lg-6">@Html.Raw(ViewBag.ContactUsHml)</div>
+    <div class="col-lg-6" id="divContact">
+       
+    </div>
+</div>
+
+@{ var d = "";
+    if(TempData["result"] != null)
+    { d = TempData["result"].ToString(); };}
+<script>
+    $(document).ready(function () {
+        debugger
+        if ('@d' != '') {
+
+            $('input:text').val('');
+            if ('@d' == 1) {
+                bootbox.alert({
+                    title: "Success !",
+                    message: '<p> Message send.</p>',
+                });
+            }
+            if ('@d' == 0) {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p> Message not send.</p>',
+                });
+            }
+        }
+    });
+</script>
+<script>
+    $.ajax({
+        url: '@BaseUtil.GetApplicationPath()/Home/Partial_Contact',
+        type: 'GET',
+        success: function (data) {
+            debugger
+            $('#divContact').html(data);          
+        },
+        error: function () {
+            bootbox.alert({
+                title: "Alert !",
+                message: '<p>Whooaaa! Something went wrong..</p>',
+                timeOut: 2000
+
+            });
+
+        }
+    });
+</script>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<UUWebstore.Models.sp_productOrder_GetAll_Result>
+@using UUWebstore.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
+
+<h2>Quotation</h2>
+
+
+<table class="table">
+    <tr>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>       
+        
+        <th>
+            @Html.DisplayNameFor(model => model.website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </th>
+       
+       
+        <th>
+            @Html.DisplayNameFor(model => model.ImprintLine1)
+        </th>
+     
+        <th>
+            @Html.DisplayNameFor(model => model.Attachment1)
+        </th>       
+       
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderPrice)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.shipping_address)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDeliveryExpectedDate)
+        </th>        
+      
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.productName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobile)<br />  @Html.DisplayFor(modelItem => item.phone)<br />@Html.DisplayFor(modelItem => item.emailAddress)
+        </td>
+        <td>
+          @{if (item.website != null)
+              {
+                  <a href="@item.website" target="_blank" >Visit Website</a>
+              }
+              }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdDate)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.ImprintLine1)
+        </td>
+        
+      
+        <td>
+            @{ if (item.Attachment1 != null)
+                {
+                    <a href='#' onclick="openModel('@item.Attachment1')">Attachment</a>
+                }
+            }
+           
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderPrice)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.shipping_address)
+        </td>
+       
+        <td>
+           @{if (@item.OrderDeliveryExpectedDate != null)
+               {
+                     @item.OrderDeliveryExpectedDate.ToString().Substring(0,10)}
+               }
+        </td>
+       
+    </tr>
+}
+
+</table>
+<div class="modal fade" tabindex="-1" id="loginModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">Banner </h4>
+            </div>
+            <div class="modal-body">
+                <img id="img" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModel(bannerImgUR)
+    {     debugger
+        $('#img').attr('src', bannerImgUR);
+        $("#loginModal").modal('show');
+    }
+</script>

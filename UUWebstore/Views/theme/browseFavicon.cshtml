@@ -1,6 +1,6 @@
-﻿
+﻿@using UUWebstore.Models;
 @{
-    ViewBag.Title = "browseFavicon";
+    
     Layout = "~/Views/Shared/_LayoutInternal.cshtml";
 }
 
@@ -9,6 +9,7 @@
 @using (Html.BeginForm("browseFavicon", "theme", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    <div class="col-md-12"><label>Note: Try to upload banner of size 1920x570 </label></div>
     <div class="col-md-12">
         <div class="form-group">
 
@@ -46,12 +47,12 @@
 
                             var height = this.height;
                             var width = this.width;
-                            if (height > 200 || width > 200) {
+                            if (height != 50 || width != 50) {
 
 
                                 bootbox.alert({
                                     title: "Alert !",
-                                    message: 'Height and Width must not exceed 200px.'
+                                    message: 'Try to upload Logo of size 50x50'
                                 });
                                 return false;
                             }

@@ -1,10 +1,8 @@
 ﻿@model UUWebstore.Models.banner
 
 @{
-    ViewBag.Title = "uploadbanner";
     Layout = "~/Views/Shared/_LayoutInternal.cshtml";
 }
-
 
 @using (Html.BeginForm("uploadbanner", "websetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
 { 
@@ -27,35 +25,36 @@
                 @Html.ValidationMessageFor(model => model.srNumber, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12"><label>Note: Try to upload banner of size 1920x570 </label></div>
+            <div class="col-md-12">
+                <div class="form-group">
+
+                    <div class="col-md-9 choose-img">
+                        <img id="pic" src='@ViewBag.img' alt="Logo" width="600px" height="400px">
+                        <input type="file" id="photoA" name="file" class="choose-input">
+                    </div>
+                </div>
+            </div>
+
+
             <div class="form-group">
+                @Html.LabelFor(model => model.isActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.isActive)
+                        @Html.ValidationMessageFor(model => model.isActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
 
-                <div class="col-md-9 choose-img">
-                    <img id="pic" src='@ViewBag.img' alt="Logo" width="600px" height="400px">
-                    <input type="file" id="photoA" name="file" class="choose-input">
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Upload" class="btn btn-default" />
                 </div>
             </div>
         </div>
-       
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.isActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.isActive)
-                    @Html.ValidationMessageFor(model => model.isActive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-      
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Upload" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
 
 <div>
@@ -81,12 +80,10 @@
 
                             var height = this.height;
                             var width = this.width;
-                            if (height > 200 || width > 200) {
-
-
+                            if (height != 1920 || width != 570) {
                                 bootbox.alert({
                                     title: "Alert !",
-                                    message: 'Height and Width must not exceed 200px.'
+                                    message: 'Try to upload banner of size 1920x570'
                                 });
                                 return false;
                             }
@@ -97,7 +94,6 @@
                                 reader1.onload = function (e) {
                                     $('#pic').attr('src', e.target.result);
                                 }
-
                                 reader1.readAsDataURL(input.files[0]);
                             }
                         };

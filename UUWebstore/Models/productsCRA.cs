@@ -21,7 +21,7 @@ namespace UUWebstore.Models
         public string productTitle { get; set; }
         public string slugURL { get; set; }
         public int proCategoryId { get; set; }
-        public int brandId { get; set; }
+        public Nullable<int> brandId { get; set; }
         public string descriptionHtml { get; set; }
         public string materialHtml { get; set; }
         public string productInformationHtml { get; set; }
@@ -37,11 +37,12 @@ namespace UUWebstore.Models
         public Nullable<bool> isShowPrice { get; set; }
         public long createdBy { get; set; }
         public System.DateTime createdDate { get; set; }
-        public long modifiedBy { get; set; }
-        public System.DateTime modifiedDate { get; set; }
+        public Nullable<long> modifiedBy { get; set; }
+        public Nullable<System.DateTime> modifiedDate { get; set; }
         public bool isActive { get; set; }
         public bool isDelete { get; set; }
-        public int productSubCategoryId { get; set; }
-        public bool isFeaturedProduct { get; set; }
+        public Nullable<int> productSubCategoryId { get; set; }
+        public Nullable<bool> isFeaturedProduct { get; set; }
+        public Nullable<long> supplierId { get; set; }
     }
 }

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UUWebstore.Models;
 
 namespace UUWebstore.Models.IRepositories
 {
-   public interface IaccountServices
+    public interface IaccountServices
     {
         sp_LoginUser_Result UserLogin(String userID, string password);
         int resetPassword(resetPassword oresetPassword);

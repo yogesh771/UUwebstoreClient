@@ -13,7 +13,7 @@ namespace UUWebstore.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
-    using System.Linq;
+   
     
     public partial class sbv_uuwebstoreEntities : DbContext
     {
@@ -38,16 +38,22 @@ namespace UUWebstore.Models
         public virtual DbSet<clientWebInformation> clientWebInformations { get; set; }
         public virtual DbSet<ClientWebsiteAdsInfo> ClientWebsiteAdsInfoes { get; set; }
         public virtual DbSet<ClientWebsiteBannerInfo> ClientWebsiteBannerInfoes { get; set; }
+        public virtual DbSet<ContactU> ContactUs { get; set; }
         public virtual DbSet<country> countries { get; set; }
         public virtual DbSet<enquiry> enquiries { get; set; }
         public virtual DbSet<featuredCategoryReferrence> featuredCategoryReferrences { get; set; }
         public virtual DbSet<fontFamily> fontFamilies { get; set; }
+        public virtual DbSet<OrderPresentStatu> OrderPresentStatus { get; set; }
+        public virtual DbSet<OrderStatu> OrderStatus { get; set; }
+        public virtual DbSet<packagingInformation> packagingInformations { get; set; }
         public virtual DbSet<productAvailableSize> productAvailableSizes { get; set; }
         public virtual DbSet<productCategory> productCategories { get; set; }
         public virtual DbSet<productCategoryClient> productCategoryClients { get; set; }
         public virtual DbSet<productColor> productColors { get; set; }
+        public virtual DbSet<productexcel> productexcels { get; set; }
         public virtual DbSet<productForClient> productForClients { get; set; }
         public virtual DbSet<productImage> productImages { get; set; }
+        public virtual DbSet<ProductOrder> ProductOrders { get; set; }
         public virtual DbSet<ProductPrice> ProductPrices { get; set; }
         public virtual DbSet<productsCRA> productsCRAs { get; set; }
         public virtual DbSet<productSubCategory> productSubCategories { get; set; }
@@ -334,6 +340,98 @@ namespace UUWebstore.Models
                 new ObjectParameter("ddl_filter_AutoAll", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllbannersCreatedBy_sp_Result>("getAllbannersCreatedBy_sp", userIdParameter, ddl_filter_AutoAllParameter);
+        }
+    
+        public virtual ObjectResult<sp_ProductForClient_GetById_Result> sp_ProductForClient_GetById(Nullable<long> productId, Nullable<long> userId)
+        {
+            var productIdParameter = productId.HasValue ?
+                new ObjectParameter("productId", productId) :
+                new ObjectParameter("productId", typeof(long));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductForClient_GetById_Result>("sp_ProductForClient_GetById", productIdParameter, userIdParameter);
+        }
+    
+        public virtual int getClientWebsiteReference_sp(Nullable<long> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("getClientWebsiteReference_sp", userIdParameter);
+        }
+    
+        public virtual int getClientWebsiteReference_sp1(Nullable<long> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("getClientWebsiteReference_sp1", userIdParameter);
+        }
+    
+        public virtual ObjectResult<sp_productOrder_GetAll_Result> sp_productOrder_GetAll(Nullable<long> orderID, Nullable<long> orderTOWebClient)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("OrderID", orderID) :
+                new ObjectParameter("OrderID", typeof(long));
+    
+            var orderTOWebClientParameter = orderTOWebClient.HasValue ?
+                new ObjectParameter("orderTOWebClient", orderTOWebClient) :
+                new ObjectParameter("orderTOWebClient", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_productOrder_GetAll_Result>("sp_productOrder_GetAll", orderIDParameter, orderTOWebClientParameter);
+        }
+    
+        public virtual ObjectResult<getProductList_sp_client_Result> getProductList_sp_client(Nullable<int> productOptions_All_featured, Nullable<int> productCategoryId, Nullable<int> productSubCategoryId, Nullable<long> userId, Nullable<int> webReference)
+        {
+            var productOptions_All_featuredParameter = productOptions_All_featured.HasValue ?
+                new ObjectParameter("productOptions_All_featured", productOptions_All_featured) :
+                new ObjectParameter("productOptions_All_featured", typeof(int));
+    
+            var productCategoryIdParameter = productCategoryId.HasValue ?
+                new ObjectParameter("productCategoryId", productCategoryId) :
+                new ObjectParameter("productCategoryId", typeof(int));
+    
+            var productSubCategoryIdParameter = productSubCategoryId.HasValue ?
+                new ObjectParameter("productSubCategoryId", productSubCategoryId) :
+                new ObjectParameter("productSubCategoryId", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(long));
+    
+            var webReferenceParameter = webReference.HasValue ?
+                new ObjectParameter("webReference", webReference) :
+                new ObjectParameter("webReference", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProductList_sp_client_Result>("getProductList_sp_client", productOptions_All_featuredParameter, productCategoryIdParameter, productSubCategoryIdParameter, userIdParameter, webReferenceParameter);
+        }
+    
+        public virtual ObjectResult<string> sp_productCRA_uploadExcel()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_productCRA_uploadExcel");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> updatePramotionalBlock_sp(string blockPramotionAdmin)
+        {
+            var blockPramotionAdminParameter = blockPramotionAdmin != null ?
+                new ObjectParameter("BlockPramotionAdmin", blockPramotionAdmin) :
+                new ObjectParameter("BlockPramotionAdmin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("updatePramotionalBlock_sp", blockPramotionAdminParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> updatePramotionVideo_sp(string youTubePramotionAdmin)
+        {
+            var youTubePramotionAdminParameter = youTubePramotionAdmin != null ?
+                new ObjectParameter("youTubePramotionAdmin", youTubePramotionAdmin) :
+                new ObjectParameter("youTubePramotionAdmin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("updatePramotionVideo_sp", youTubePramotionAdminParameter);
         }
     }
 }

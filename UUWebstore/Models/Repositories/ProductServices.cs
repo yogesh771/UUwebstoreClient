@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
-using System.Web;
 using UUWebstore.Models.IRepositories;
 
 namespace UUWebstore.Models.Repositories
@@ -20,8 +19,9 @@ namespace UUWebstore.Models.Repositories
         {
             return uow.ProductSubCategory.Find(e => e.productCategoryId == productCategoryId).ToList();
         }
-        public List<getProductList_sp_Result>SearchProductsReult(int productOptions_All_featured, int productCategoryId, int productSubCategoryId, int UserId)
+        public List<getProductList_sp_client_Result>SearchProductsReult(int productOptions_All_featured, int productCategoryId, int productSubCategoryId, int UserId,int webReference, int pageNumber, int pageSize)
         {
+
             var productOptions_All_featured_ = new SqlParameter("@productOptions_All_featured", productOptions_All_featured );
           
             var productCategoryId_ = new SqlParameter("@productCategoryId", SqlString.Null);
@@ -33,15 +33,14 @@ namespace UUWebstore.Models.Repositories
             if (productSubCategoryId != 0)
                 productSubCategoryId_ = new SqlParameter("@productSubCategoryId", productCategoryId);
 
-
-            //var UserId_ = new SqlParameter("@UserId", SqlString.Null);
-            //if (productOptions_All_featured == 1)
-            //{
             var UserId_ = new SqlParameter("@UserId", UserId);
-            //}
+            var webReference_ = new SqlParameter("@webReference", webReference); 
+            int SkipProducts = 0;
+            SkipProducts=pageNumber == 0 ? SkipProducts : pageNumber * pageSize;
 
-            var result = uow.sp_LoginUser_Result_.SQLQuery<getProductList_sp_Result>("getProductList_sp @productOptions_All_featured,@productCategoryId,@productSubCategoryId,@UserId",
-                                                                                   productOptions_All_featured_, productCategoryId_, productSubCategoryId_, UserId_).ToList();
+            var result = uow.sp_LoginUser_Result_.SQLQuery<getProductList_sp_client_Result>("getProductList_sp_client @productOptions_All_featured,@productCategoryId,@productSubCategoryId,@UserId,@webReference",
+                                                                                   productOptions_All_featured_, productCategoryId_, productSubCategoryId_, UserId_, webReference_).Skip(SkipProducts).Take(pageSize).ToList();
+
             return result;
         }
 
@@ -79,6 +78,14 @@ namespace UUWebstore.Models.Repositories
             var isFeatured = new SqlParameter("@isFeatured", SqlString.Null);
             var result = uow.sp_LoginUser_Result_.SQLQuery<int>("SelectProduct_sp @createdBy,@productId,@chk,@isFeatured",
                                                                                          createdBy, productId_, chk_, isFeatured).FirstOrDefault();
+            return result;
+        }
+
+        public sp_ProductForClient_GetById_Result ProductForClient_GetById(Int64 id)
+        {
+            var createdBy = new SqlParameter("@userId", Convert.ToInt32(BaseUtil.GetWebConfigValue("ClientID")));
+            var productId_ = new SqlParameter("@productId", id);
+            var result = uow.sp_LoginUser_Result_.SQLQuery<sp_ProductForClient_GetById_Result>("sp_ProductForClient_GetById @productId,@userId", productId_, createdBy).FirstOrDefault();
             return result;
         }
     }

@@ -1,4 +1,8 @@
-﻿<h2>All Product Categories</h2>
+﻿@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
+@using UUWebstore.Models;
+<h2>All Product Categories</h2>
 
     <div class="form-horizontal">
  
@@ -10,11 +14,11 @@
                 <div class="form-group">
                   <select id="ddl_filter" onchange="callFun()">
                       <option value="0">All</option>
-                      <option value="1">Featured</option>
+                      @*<option value="1">Featured</option>*@
                   </select>
                 </div>
             </div>
-            <div class="col-md-5" id="div_id" style="display:none">
+            <div class="col-md-5" id="div_id">  @*style="display:none"*@
                 <div class="form-group">                                   
                     @Html.DropDownList("cateoryDDlValue",null,new { @class="form-control", @id= "ddl_filter_AutoAll"})
                     <input type="button" value="Make Website Referrence" class="btn btn-default" onclick="MakeWebsiteReferrence()" />
@@ -63,10 +67,12 @@
 
         var ddl_filter = $("#ddl_filter").val();
         var ddl_filter_AutoAll = $("#ddl_filter_AutoAll").val();       
-       
+        if (document.getElementById('div_id').style.display == 'none') {
+            ddl_filter_AutoAll = 0;
+        }
         debugger
         $.ajax({
-            url: '/websetting/Partial_SearchProductCategorieReult',
+            url: '@BaseUtil.GetApplicationPath()'+'/websetting/Partial_SearchProductCategorieReult',
             type: 'POST',
             data: { 'ddl_filter': ddl_filter, 'ddl_filter_AutoAll': ddl_filter_AutoAll },
             success: function (data) {
@@ -103,7 +109,7 @@
 
         debugger
         $.ajax({
-            url: '/websetting/SaveAdminFeaturedReferrence',
+            url: '@BaseUtil.GetApplicationPath()/websetting/SaveAdminFeaturedReferrence',
             type: 'POST',
             data: {'ddl_filter_AutoAll': ddl_filter_AutoAll,'categoryType':1 },
             success: function (data) {

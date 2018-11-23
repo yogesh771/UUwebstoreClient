@@ -1,8 +1,9 @@
-﻿
-
-<link href="~/Content/slimtable.css" rel="stylesheet" />
-<script src="~/Scripts/slimtable.js"></script>
-
+﻿@using UUWebstore.Models;
+@*<link href="~/Content/slimtable.css" rel="stylesheet" />
+<script src="~/Scripts/slimtable.js"></script>*@
+@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
 
     <div class="form-horizontal">     
         <h4 class="page-header">search</h4>
@@ -59,17 +60,17 @@
 
     function searchResult() {
 
-       
+
         var countryId = $("#countryId").val();
         var stateId = $("#stateId").val();
-        var cityId = $("#cityId").val();      
+        var cityId = $("#cityId").val();
         var txtfullName = $("#txtfullName").val();
         countryId = countryId == "" ? 0 : countryId
         stateId = stateId == "" ? 0 : stateId
         cityId = cityId == "" ? 0 : cityId
         debugger
         $.ajax({
-            url: '/Supplier/Partial_GetFilteredSupplier',
+            url: '@BaseUtil.GetApplicationPath()'+'/Supplier/Partial_GetFilteredSupplier',
             type: 'POST',
             data: {
                 'countryId': countryId, 'stateId': stateId, 'cityId': cityId,

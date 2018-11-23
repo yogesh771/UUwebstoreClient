@@ -1,4 +1,7 @@
-﻿
+﻿@using UUWebstore.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
 <div>
     @Html.ActionLink("Upload Banner", "uploadbanner")
 </div>
@@ -49,7 +52,7 @@
 
         debugger
         $.ajax({
-            url: '/websetting/Partial_SearchBannerReult',
+            url:'@BaseUtil.GetApplicationPath()/websetting/Partial_SearchBannerReult',
             type: 'POST',
             data: {'ddl_filter_AutoAll': ddl_filter_AutoAll },
             success: function (data) {

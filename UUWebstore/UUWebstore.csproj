@@ -201,7 +201,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\accountController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\QuatesController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\themeController.cs" />
     <Compile Include="Controllers\websettingController.cs" />
@@ -246,6 +249,9 @@
     <Compile Include="Models\ClientWebsiteBannerInfo.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactU.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\country.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
@@ -270,6 +276,9 @@
     <Compile Include="Models\getFilteredUsers_Result.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\getProductList_sp_client_Result.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\getProductList_sp_Result.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
@@ -278,13 +287,25 @@
     </Compile>
     <Compile Include="Models\IRepositories\IaccountServices.cs" />
     <Compile Include="Models\IRepositories\IclientWebInformation.cs" />
+    <Compile Include="Models\IRepositories\IContactUsServices.cs" />
     <Compile Include="Models\IRepositories\ICountryServices.cs" />
+    <Compile Include="Models\IRepositories\IProductOrderRepository.cs" />
     <Compile Include="Models\IRepositories\IProductServices.cs" />
+    <Compile Include="Models\IRepositories\IQuatesRepository.cs" />
     <Compile Include="Models\IRepositories\IRoleUserServices.cs" />
     <Compile Include="Models\IRepositories\IsettingServices.cs" />
     <Compile Include="Models\IRepositories\IStateServices.cs" />
     <Compile Include="Models\IRepositories\ISupplierServices.cs" />
     <Compile Include="Models\IRepositories\IthemeServices.cs" />
+    <Compile Include="Models\OrderPresentStatu.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderStatu.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\packagingInformation.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\productAvailableSize.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
@@ -297,10 +318,16 @@
     <Compile Include="Models\productColor.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\productexcel.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\productForClient.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\productImage.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductOrder.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductPrice.cs">
@@ -317,8 +344,11 @@
     </Compile>
     <Compile Include="Models\Repositories\accountServices.cs" />
     <Compile Include="Models\Repositories\clientWebInformation.cs" />
+    <Compile Include="Models\Repositories\ContactUsServices.cs" />
     <Compile Include="Models\Repositories\CountryServices.cs" />
+    <Compile Include="Models\Repositories\ProductOrderRepository.cs" />
     <Compile Include="Models\Repositories\ProductServices.cs" />
+    <Compile Include="Models\Repositories\QuatesRepository.cs" />
     <Compile Include="Models\Repositories\Repositories.cs" />
     <Compile Include="Models\Repositories\RoleUserSerives.cs" />
     <Compile Include="Models\Repositories\settingServices.cs" />
@@ -333,6 +363,12 @@
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_LoginUser_Result.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ProductForClient_GetById_Result.cs">
+      <DependentUpon>uuwebstore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_productOrder_GetAll_Result.cs">
       <DependentUpon>uuwebstore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\state.cs">
@@ -498,7 +534,104 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\banner-01.jpg" />
+    <Content Include="images\banner-02.jpg" />
+    <Content Include="images\banner-03.jpg" />
+    <Content Include="images\banner-04.jpg" />
+    <Content Include="images\banner-05.jpg" />
+    <Content Include="images\banner-06.jpg" />
+    <Content Include="images\banner-07.jpg" />
+    <Content Include="images\banner-08.jpg" />
+    <Content Include="images\banner-09.jpg" />
+    <Content Include="images\banner-10.jpg" />
+    <Content Include="images\banner-11.jpg" />
+    <Content Include="images\banner-12.jpg" />
+    <Content Include="images\banner-13.jpg" />
+    <Content Include="images\banner-14.jpg" />
+    <Content Include="images\bg-banner-01.jpg" />
+    <Content Include="images\bg-banner-02.jpg" />
+    <Content Include="images\bg-video-01.jpg" />
+    <Content Include="images\blog-01.jpg" />
+    <Content Include="images\blog-02.jpg" />
+    <Content Include="images\blog-03.jpg" />
+    <Content Include="images\blog-04.jpg" />
+    <Content Include="images\blog-05.jpg" />
+    <Content Include="images\blog-06.jpg" />
+    <Content Include="images\blog-07.jpg" />
+    <Content Include="images\blog-08.jpg" />
+    <Content Include="images\blog-09.jpg" />
+    <Content Include="images\blog-10.jpg" />
+    <Content Include="images\gallery-01.jpg" />
+    <Content Include="images\gallery-02.jpg" />
+    <Content Include="images\gallery-03.jpg" />
+    <Content Include="images\gallery-04.jpg" />
+    <Content Include="images\gallery-05.jpg" />
+    <Content Include="images\gallery-06.jpg" />
+    <Content Include="images\gallery-07.jpg" />
+    <Content Include="images\gallery-08.jpg" />
+    <Content Include="images\gallery-09.jpg" />
+    <Content Include="images\gallery-10.jpg" />
+    <Content Include="images\gallery-11.jpg" />
+    <Content Include="images\gallery-12.jpg" />
+    <Content Include="images\gallery-13.jpg" />
+    <Content Include="images\gallery-14.jpg" />
+    <Content Include="images\gallery-15.jpg" />
+    <Content Include="images\heading-pages-01.jpg" />
+    <Content Include="images\heading-pages-02.jpg" />
+    <Content Include="images\heading-pages-03.jpg" />
+    <Content Include="images\heading-pages-04.jpg" />
+    <Content Include="images\heading-pages-05.jpg" />
+    <Content Include="images\heading-pages-06.jpg" />
+    <Content Include="images\item-01.jpg" />
+    <Content Include="images\item-02.jpg" />
+    <Content Include="images\item-03.jpg" />
+    <Content Include="images\item-04.jpg" />
+    <Content Include="images\item-05.jpg" />
+    <Content Include="images\item-06.jpg" />
+    <Content Include="images\item-07.jpg" />
+    <Content Include="images\item-08.jpg" />
+    <Content Include="images\item-09.jpg" />
+    <Content Include="images\item-10.jpg" />
+    <Content Include="images\item-11.jpg" />
+    <Content Include="images\item-12.jpg" />
+    <Content Include="images\item-13.jpg" />
+    <Content Include="images\item-14.jpg" />
+    <Content Include="images\item-15.jpg" />
+    <Content Include="images\item-16.jpg" />
+    <Content Include="images\item-17.jpg" />
+    <Content Include="images\item-cart-01.jpg" />
+    <Content Include="images\item-cart-02.jpg" />
+    <Content Include="images\item-cart-03.jpg" />
+    <Content Include="images\item-cart-04.jpg" />
+    <Content Include="images\item-cart-05.jpg" />
+    <Content Include="images\item-cart-06.jpg" />
+    <Content Include="images\master-slide-01.jpg" />
+    <Content Include="images\master-slide-02.jpg" />
+    <Content Include="images\master-slide-03.jpg" />
+    <Content Include="images\master-slide-04.jpg" />
+    <Content Include="images\master-slide-05.jpg" />
+    <Content Include="images\master-slide-06.jpg" />
+    <Content Include="images\master-slide-07.jpg" />
+    <Content Include="images\master-slide-08.jpg" />
     <Content Include="images\news.jpg" />
+    <Content Include="images\orderImage\39ac4819-43a3-4e89-b33b-aa208c4daa65_discover.png" />
+    <Content Include="images\orderImage\46713335-23eb-45db-b165-1a6ac695e5de_icon-position-map.png" />
+    <Content Include="images\orderImage\4c3352b5-3e88-4d33-aa84-fff6cde0379a_favicon.png" />
+    <Content Include="images\orderImage\4d8c492f-94d8-40a3-97c5-328d348a497a_icon-position-map.png" />
+    <Content Include="images\orderImage\868a2a9a-1af3-4efe-895b-e480024a8203_express.png" />
+    <Content Include="images\orderImage\9f85b330-0670-47ef-a8ab-f2c6e71b7292_express.png" />
+    <Content Include="images\orderImage\ac4e86da-e2d8-4e98-b9d1-b40b0fa8e367_express.png" />
+    <Content Include="images\orderImage\cea655f1-e84a-4c70-9066-acdeb5261972_discover.png" />
+    <Content Include="images\orderImage\d2ea5470-c2fd-4b37-a52c-748af0438578_favicon.png" />
+    <Content Include="images\orderImage\d3d54fca-99fd-409d-8ba2-5b199d69c3c3_discover.png" />
+    <Content Include="images\product-detail-01.jpg" />
+    <Content Include="images\product-detail-02.jpg" />
+    <Content Include="images\product-detail-03.jpg" />
+    <Content Include="images\shop-item-09.jpg" />
+    <Content Include="images\thumb-item-01.jpg" />
+    <Content Include="images\thumb-item-02.jpg" />
+    <Content Include="images\thumb-item-03.jpg" />
+    <Content Include="images\Untitled-5.jpg" />
     <Content Include="Models\uuwebstore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>uuwebstore.edmx</DependentUpon>
@@ -577,6 +710,7 @@
     <Content Include="Models\uuwebstore.edmx.diagram">
       <DependentUpon>uuwebstore.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\UUClient.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -602,8 +736,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\PageNotFound.cshtml" />
+    <Content Include="Views\Shared\NotFound404.cshtml" />
     <Content Include="Views\Shared\_LayoutInternal.cshtml" />
     <Content Include="Views\account\Index.cshtml" />
     <Content Include="Views\account\login.cshtml" />
@@ -619,23 +752,43 @@
     <Content Include="Views\websetting\availablebanners.cshtml" />
     <Content Include="Views\websetting\uploadbanner.cshtml" />
     <Content Include="Views\websetting\AllProductCategories.cshtml" />
-    <Content Include="Views\websetting\_ViewStart.cshtml" />
     <Content Include="Views\websetting\Partial_SearchProductCategorieReult.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Partial_SearchProductsReult.cshtml" />
-    <Content Include="Views\Products\_ViewStart.cshtml" />
     <Content Include="Views\Supplier\Partial_GetFilteredSupplier.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
-    <Content Include="Views\Supplier\_ViewStart.cshtml" />
     <Content Include="Views\websetting\Partial_SearchBannerReult.cshtml" />
     <Content Include="Views\websetting\ContactUs.cshtml" />
     <Content Include="Views\websetting\AboutUs.cshtml" />
     <Content Include="Views\websetting\HomePage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\partial_Products.cshtml" />
+    <Content Include="Views\Home\ProductsDetails.cshtml" />
+    <Content Include="Views\Home\Partial_ProductOrderInforamtion.cshtml" />
+    <Content Include="Views\websetting\SocailMedia.cshtml" />
+    <Content Include="Views\Quates\Index.cshtml" />
+    <Content Include="Views\ContactUs\Contacts.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\Home\Partial_Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="bannersImg\" />
     <Folder Include="bin\" />
+    <Folder Include="css\" />
+    <Folder Include="fonts\elegant-font\" />
+    <Folder Include="fonts\font-awesome-4.7.0\" />
+    <Folder Include="fonts\ionicons-2.0.1\" />
+    <Folder Include="fonts\Linearicons-Free-v1.0.0\" />
+    <Folder Include="fonts\montserrat\" />
+    <Folder Include="fonts\poppins\" />
+    <Folder Include="fonts\themify\" />
+    <Folder Include="images\icons\" />
+    <Folder Include="js\" />
+    <Folder Include="vendor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

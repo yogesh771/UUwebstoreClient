@@ -16,30 +16,36 @@
         <EntityTypeShape EntityType="sbv_uuwebstoreModel.clientWebInformation" Width="1.5" PointX="6.75" PointY="6.75" />
         <EntityTypeShape EntityType="sbv_uuwebstoreModel.ClientWebsiteAdsInfo" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="sbv_uuwebstoreModel.ClientWebsiteBannerInfo" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.country" Width="1.5" PointX="2.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.enquiry" Width="1.5" PointX="8.75" PointY="4.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.featuredCategoryReferrence" Width="1.5" PointX="8.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.fontFamily" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productAvailableSize" Width="1.5" PointX="10.75" PointY="4.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productCategory" Width="1.5" PointX="10.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productCategoryClient" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productColor" Width="1.5" PointX="0.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productForClient" Width="1.5" PointX="2.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productImage" Width="1.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.ProductPrice" Width="1.5" PointX="4.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productsCRA" Width="1.5" PointX="6.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productSubCategory" Width="1.5" PointX="8.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productVedio" Width="1.5" PointX="12.75" PointY="9.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.roleUser" Width="1.5" PointX="10.75" PointY="13.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.sendGridDetail" Width="1.5" PointX="12.75" PointY="13.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.state" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.supplierCategory" Width="1.5" PointX="14.75" PointY="4.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.supplierCategoryOption" Width="1.5" PointX="14.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.theme" Width="1.5" PointX="14.75" PointY="12.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.TodayOffer" Width="1.5" PointX="16.75" PointY="0.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.userRight" Width="1.5" PointX="16.75" PointY="4.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.user" Width="1.5" PointX="16.75" PointY="8.75" />
-        <EntityTypeShape EntityType="sbv_uuwebstoreModel.WebClientSupplier" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.ContactU" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.country" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.enquiry" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.featuredCategoryReferrence" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.fontFamily" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.OrderPresentStatu" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.OrderStatu" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.packagingInformation" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productAvailableSize" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productCategory" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productCategoryClient" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productColor" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productexcel" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productForClient" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productImage" Width="1.5" PointX="4.75" PointY="14.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.ProductOrder" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.ProductPrice" Width="1.5" PointX="14.75" PointY="8.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productsCRA" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productSubCategory" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.productVedio" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.roleUser" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.sendGridDetail" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.state" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.supplierCategory" Width="1.5" PointX="16.75" PointY="11.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.supplierCategoryOption" Width="1.5" PointX="14.75" PointY="16.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.theme" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.TodayOffer" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.userRight" Width="1.5" PointX="18.75" PointY="4.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.user" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="sbv_uuwebstoreModel.WebClientSupplier" Width="1.5" PointX="18.75" PointY="15.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

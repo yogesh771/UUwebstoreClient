@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
-using UUWebstore.Models;
 using UUWebstore.Models.Repositories;
 
 namespace UUWebstore.Models.BaseClass
@@ -29,7 +26,7 @@ namespace UUWebstore.Models.BaseClass
             if (BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) == "")
             {
                 filterContext.Result = null;
-                filterContext.Result = new RedirectResult("/Account/login");
+                filterContext.Result = new RedirectResult(BaseUtil.GetApplicationPath()+"/Account/login");
                 return;
             }
             return;
@@ -70,9 +67,9 @@ namespace UUWebstore.Models.BaseClass
         {
             String fileName = "";
             fileName = Guid.NewGuid() + "_" + Path.GetFileName(file.FileName);
-            var savedToPath = Path.Combine(Server.MapPath("~" + path), fileName);
+            var savedToPath = Path.Combine(HostingEnvironment.MapPath(@"~" + path), fileName);
             file.SaveAs(savedToPath);
-            return path + "/" + fileName;
+            return BaseUtil.GetApplicationPath()+ path + "/" + fileName;
         }
     }
   

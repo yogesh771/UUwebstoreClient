@@ -1,5 +1,9 @@
-﻿<link href="~/Content/slimtable.css" rel="stylesheet" />
-<script src="~/Scripts/slimtable.js"></script>
+﻿@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
+@using UUWebstore.Models;
+@*<link href="~/Content/slimtable.css" rel="stylesheet" />
+<script src="~/Scripts/slimtable.js"></script>*@
 <h2>Products</h2>
 <div class="form-horizontal">
 
@@ -17,15 +21,15 @@
         </div>
         <div class="col-md-3">
             <div class="form-group">
-                @Html.DropDownList("productCategoryId", null,"Product Categories", new { @class = "form-control", onChange = "fillSubCategories()" })               
+                @Html.DropDownList("productCategoryId", null,"Product Categories", new { @class = "form-control" })            @*, onChange = "fillSubCategories()"*@   
             </div>
 
         </div>
-        <div class="col-md-3">
+        @*<div class="col-md-3">
             <div class="form-group">
                 @Html.DropDownList("productSubCategoryId", null,"Product Subcategories", new { @class = "form-control" })
             </div>
-        </div>
+        </div>*@
       
         <div class="col-md-5" id="div_id" >
             <div class="form-group">
@@ -36,7 +40,7 @@
         </div>
         <div class="col-md-3">
             <div class="form-group">
-                <input type="button" value="Search" class="btn btn-default" onclick="searchResult()" />
+                <input type="button" value="Search" class="btn btn-default" onclick="searchResult(0,500)" />
             </div>
         </div>
     </div>
@@ -68,7 +72,7 @@
         if (ddl_filter != "") {
             debugger
             $.ajax({
-                url: '/Products/fillProductCategories',
+                url: '@BaseUtil.GetApplicationPath()/Products/fillProductCategories',
                 type: 'GET',
                 data: { 'ddl_filter': ddl_filter },
                 success: function (result) {
@@ -95,22 +99,24 @@
 </script>
 <script>
     $(document).ready(function () {
-        searchResult()
+        searchResult(0,500)
     })
 
 </script>
 <script>
 
-    function searchResult() {
-
+    function searchResult( pageNumber,  pageSize) {
+        debugger
         var ddl_filterCategory = $("#ddl_filterCategory").val();
         var productCategoryId = $("#productCategoryId").val() == '' ? 0 : $("#productCategoryId").val();
-        var productSubCategoryId = $("#productSubCategoryId").val() == '' ? 0 : $("#productSubCategoryId").val();
+        var productSubCategoryId = 0; // $("#productSubCategoryId").val() == '' ? 0 : $("#productSubCategoryId").val();
         var cateoryDDlValue = $("#ddl_filter_AutoAll").val();
+
+      
         $.ajax({
-            url: '/Products/Partial_SearchProductsReult',
+            url: '@BaseUtil.GetApplicationPath()/Products/Partial_SearchProductsReult',
             type: 'POST',
-            data: { 'productOptions_All_featured': ddl_filterCategory, 'productCategoryId': productCategoryId, 'productSubCategoryId': productSubCategoryId, 'cateoryDDlValue': cateoryDDlValue },
+            data: { 'productOptions_All_featured': ddl_filterCategory, 'productCategoryId': productCategoryId, 'productSubCategoryId': productSubCategoryId, 'cateoryDDlValue': cateoryDDlValue, 'webReference': cateoryDDlValue, 'pageNumber': pageNumber, 'pageSize': pageSize },
             success: function (data) {
                 debugger
                 $('#viewResult').html(data);
@@ -134,7 +140,7 @@
 
         debugger
         $.ajax({
-            url: '/websetting/SaveAdminFeaturedReferrence',
+            url: '@BaseUtil.GetApplicationPath()/websetting/SaveAdminFeaturedReferrence',
             type: 'POST',
             data: { 'ddl_filter_AutoAll': ddl_filter_AutoAll, 'categoryType': 2},
             success: function (data) {

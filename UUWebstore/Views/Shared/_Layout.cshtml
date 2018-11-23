@@ -1,4 +1,20 @@
 ﻿<!DOCTYPE html>
+@using UUWebstore.Models;
+@{ var WebSettings = BaseUtil.WebSettings();
+    var logo = WebSettings.Where(e => e.Type == "logo").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var favicon = WebSettings.Where(e => e.Type == "favicon").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var Categories = WebSettings.Where(e => e.Type == "1").ToList();
+    var Facebook = WebSettings.Where(e => e.Type == "Facebook").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var GPlus = WebSettings.Where(e => e.Type == "GPlus").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var Twiter = WebSettings.Where(e => e.Type == "Twiter").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var YouTube = WebSettings.Where(e => e.Type == "YouTube").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var Instagram = WebSettings.Where(e => e.Type == "Instagram").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var pinterest = WebSettings.Where(e => e.Type == "pinterest").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var LinkedIn = WebSettings.Where(e => e.Type == "LinkedIn").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var Clientaddress = WebSettings.Where(e => e.Type == "Clientaddress").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var Mobile = WebSettings.Where(e => e.Type == "Mobile").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var email = WebSettings.Where(e => e.Type == "email").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+}
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -8,42 +24,525 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>UU Webstore</title>
-    <!-- Bootstrap Core CSS -->
-
-
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <!-- MetisMenu CSS -->
-    <link href="~/content/theme/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="~/content/theme/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="~/content/theme/vendor/morrisjs/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
     <link href="~/content/theme/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="~/content/theme/vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <link href="~/Content/slimtable.css" rel="stylesheet" />
     <script src="~/Scripts/slimtable.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/bootbox.min.js"></script>
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>  
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="~/content/theme/vendor/metisMenu/metisMenu.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="~/content/theme/vendor/raphael/raphael.min.js"></script>
-    <script src="~/content/theme/vendor/morrisjs/morris.min.js"></script>
-    <script src="~/content/theme/data/morris-data.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="~/content/theme/dist/js/sb-admin-2.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="@favicon">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/fonts/themify/themify-icons.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/fonts/elegant-font/html-css/style.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/select2/select2.min.css">  
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/lightbox2/css/lightbox.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/vendor/noui/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/css/util.css">
+    <link rel="stylesheet" type="text/css" href="@BaseUtil.GetApplicationPath()/css/main.css">
+    <!--===============================================================================================-->
+  
 </head>
 <body>
-   
-    <div class="container body-content">
+    <div class="animsition">
+        <!-- Header -->
+        <header class="header1">
+
+            <!-- Header desktop -->
+            <div class="container-menu-header">             
+                <div class="topbar">
+                    <div class="topbar-social">
+                        <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                        <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                        <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                        <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                        <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                    </div>
+
+                    <span class="topbar-child1">
+                        Free shipping for standard order over $100
+                    </span>
+
+                    <div class="topbar-child2">
+                        <span class="topbar-email">
+                            fashe@example.com
+                        </span>
+
+
+                    </div>
+                </div>
+                <div class="wrap_header">
+                    <!-- Logo -->
+                   <a href='@Url.Action("Index", "Home")' class="logo">
+                        <img src="@logo" alt="LOGO">
+                    </a>
+
+                    <!-- Menu -->
+                    <div class="wrap_menu">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                <li>
+                                    <a href='@Url.Action("Index", "Home")'>Home</a>                              
+                                </li>
+
+                                <li>
+                                    <a href='@Url.Action("Products", "Home")'>Products</a>
+                                </li>
+
+                                <li>
+                                    <a href='@Url.Action("About", "Home")'>About</a>
+                                </li>
+
+                                <li>
+                                    <a href='@Url.Action("Contact", "Home")'>Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Header Icon -->
+                    <div class="header-icons">
+                        <a href='@Url.Action("login", "Account")' class="header-wrapicon1 dis-block">
+                            <img src="@BaseUtil.GetApplicationPath()/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                        </a>
+
+                        <div class="header-wrapicon2">
+                           
+                            <!-- Header cart noti -->
+                            <div class="header-cart header-dropdown">
+                                <ul class="header-cart-wrapitem">
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-01.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                White Shirt With Pleat Detail Back
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $19.00
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-02.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                Converse All Star Hi Black Canvas
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $39.00
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-03.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                Nixon Porter Leather Watch In Tan
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $17.00
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="header-cart-total">
+                                    Total: $75.00
+                                </div>
+
+                                <div class="header-cart-buttons">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            View Cart
+                                        </a>
+                                    </div>
+
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            Check Out
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="wrap_header_mobile">
+                <!-- Logo moblie -->
+                <a href='@Url.Action("Index", "Home")' class="logo-mobile">
+                    <img src="@logo" alt="LOGO" />
+                </a>
+
+                <!-- Button show menu -->
+                <div class="btn-show-menu">
+                    <!-- Header Icon mobile -->
+                    <div class="header-icons-mobile">
+                        <a href="#" class="header-wrapicon1 dis-block">
+                            <img src="@BaseUtil.GetApplicationPath()/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                        </a>
+
+                       
+
+                        <div class="header-wrapicon2">                            
+                            <!-- Header cart noti -->
+                            <div class="header-cart header-dropdown">
+                                <ul class="header-cart-wrapitem">
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-01.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                White Shirt With Pleat Detail Back
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $19.00
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-02.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                Converse All Star Hi Black Canvas
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $39.00
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="@BaseUtil.GetApplicationPath()/images/item-cart-03.jpg" alt="IMG">
+                                        </div>
+
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                Nixon Porter Leather Watch In Tan
+                                            </a>
+
+                                            <span class="header-cart-item-info">
+                                                1 x $17.00
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="header-cart-total">
+                                    Total: $75.00
+                                </div>
+
+                                <div class="header-cart-buttons">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            View Cart
+                                        </a>
+                                    </div>
+
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            Check Out
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="wrap-side-menu">
+                <nav class="side-menu">
+                    <ul class="main-menu">
+                        <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                            <span class="topbar-child1">
+                                Free shipping for standard order over $100
+                            </span>
+                        </li>
+
+                        <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                            <div class="topbar-child2-mobile">
+                                <span class="topbar-email">
+                                    fashe@example.com
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="item-topbar-mobile p-l-10">
+                            <div class="topbar-social-mobile">
+                                <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                                <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                                <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                                <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                                <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                            </div>
+                        </li>
+
+                        <li class="item-menu-mobile">
+                            <a href='@Url.Action("Index", "Home")'>Home</a>
+                          
+                            <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+                        </li>
+
+                        <li class="item-menu-mobile">
+                            <a href='@Url.Action("Products", "Home")'>Products</a>
+                        </li>                       
+
+                        <li class="item-menu-mobile">
+                            <a href='@Url.Action("About", "Home")'>About</a>
+                        </li>
+
+                        <li class="item-menu-mobile">
+                            <a href='@Url.Action("Contact", "Home")'>Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div>
         @RenderBody()               
     </div>
 
-   
+    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+        <div class="flex-w p-b-90">
+            <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
+                <h4 class="s-text12 p-b-30">
+                    GET IN TOUCH
+                </h4>
+
+                <div>
+                    <p class="s-text7 w-size27">
+                        Any questions? Let us know in @Clientaddress or call us on @Mobile
+                    </p>
+
+                    <div class="flex-m p-t-30">
+                        @{
+                               if(Facebook != null){ <a href = @Facebook  target="_blank" class="fs-18 color1 p-r-20 fa fa-facebook"></a>}
+                            if (Instagram != null)   { <a href=@Instagram   target="_blank" class="fs-18 color1 p-r-20 fa fa-instagram"></a>}
+                            if (pinterest != null) { <a href=@pinterest target="_blank" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>}
+                            if (LinkedIn != null)  { <a href=@LinkedIn target="_blank"  class="fs-18 color1 p-r-20 fa fa-linkedin"></a>}
+                            if (YouTube != null) { <a href=@YouTube target="_blank" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>}
+                            if (GPlus != null) { <a href=@GPlus target="_blank" class="fs-18 color1 p-r-20 fa fa-google-plus"></a>}
+                            if (Twiter != null)  { <a href=@Twiter target="_blank" class="fs-18 color1 p-r-20 fa fa-twitter"></a>}
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <h4 class="s-text12 p-b-30">
+                    Categories
+                </h4>
+
+                <ul>
+                    @{ foreach (var category in Categories)
+                        {
+                            <li class="p-b-9">
+                                <a href='@Url.Action("Product", "Home", new { category = category.productCategoryId })' class="s-text7">
+                                    @category.name
+                                </a>
+                            </li>
+                        }}
+                   
+                  </ul>
+            </div>
+
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <h4 class="s-text12 p-b-30">
+                    Links
+                </h4>
+
+                <ul>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            <a href='@Url.Action("Index","Home")'>Home</a>
+                        </a>
+                    </li>
+
+                    <li class="p-b-9">
+                        <a href='@Url.Action("About","Home")'>About</a>
+                    </li>
+
+                    <li class="p-b-9">
+                        <a href='@Url.Action("Contact","Home")'>Contact</a>
+                    </li>
+
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Returns
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                
+            </div>
+
+        </div>
+
+        <div class="t-center p-l-15 p-r-15">          
+
+            <div class="t-center s-text8 p-t-20">
+                Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            </div>
+        </div>
+    </footer>
+    <div class="btn-back-to-top bg0-hov" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </span>
+    </div>
+
+    <!-- Container Selection1 -->
+    <div id="dropDownSelect1"></div>    
+
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/bootstrap/js/popper.js"></script>
+
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/select2/select2.min.js"></script>
+    <script type="text/javascript">
+		$(".selection-1").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+    </script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/lightbox2/js/lightbox.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/sweetalert/sweetalert.min.js"></script>
+  
+    @*<script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/daterangepicker/daterangepicker.js"></script>*@
+    <!--===============================================================================================-->
+    <script src="@BaseUtil.GetApplicationPath()/js/main.js"></script>
+    
+    
 </body>
 </html>
+<script>
+    function fillState()
+    {
+        var countryID = $('#countryId').val();
+        if (countryID != "")
+        {
+
+              $.ajax({
+                  url: '@BaseUtil.GetApplicationPath()' + '/account/fillState',
+            type: 'GET',
+            data: { 'countryID': countryID },
+            success: function (result) {
+
+                $("#stateId").html("");
+                $("#stateId").append($('<option></option>').val('').html(' State'));
+                $.each($.parseJSON(result), function (i, VSC) {
+                    $("#stateId").append($('<option></option>').val(VSC.stateId).html(VSC.name))
+                })
+
+            },
+            error: function () {
+
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+            },
+            });
+        }
+    }
+
+    function fillCity()
+    {
+        var stateId = $('#stateId').val();
+        if (stateId != "") {
+
+            $.ajax({
+                url: '@BaseUtil.GetApplicationPath()' + '/account/fillCity',
+                type: 'GET',
+                data: { 'stateId': stateId },
+                success: function (result) {
+
+                    $("#cityId").html("");
+                    $("#cityId").append($('<option></option>').val('').html(' City'));
+                    $.each($.parseJSON(result), function (i, VSC) {
+                        $("#cityId").append($('<option></option>').val(VSC.cityId).html(VSC.CityName))
+                    })
+
+                },
+                error: function () {
+
+                    bootbox.alert({
+                        title: "Alert !",
+                        message: '<p>Whooaaa! Something went wrong..</p>',
+                        timeOut: 2000
+
+                    });
+                },
+            });
+        }
+    }
+</script>

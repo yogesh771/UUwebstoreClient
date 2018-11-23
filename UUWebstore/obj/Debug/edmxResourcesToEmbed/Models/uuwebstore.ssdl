@@ -127,6 +127,15 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+    <Property Name="Facebook" Type="nvarchar(max)" />
+    <Property Name="GPlus" Type="nvarchar(max)" />
+    <Property Name="Twiter" Type="nvarchar(max)" />
+    <Property Name="YouTube" Type="nvarchar(max)" />
+    <Property Name="Instagram" Type="nvarchar(max)" />
+    <Property Name="pinterest" Type="nvarchar(max)" />
+    <Property Name="LinkedIn" Type="nvarchar(max)" />
+    <Property Name="youTubePramotionAdmin" Type="nvarchar(max)" />
+    <Property Name="BlockPramotionAdmin" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ClientWebsiteAdsInfo">
     <Key>
@@ -155,6 +164,22 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactUs">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="500" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" MaxLength="500" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="userId" Type="bigint" />
+    <Property Name="createdate" Type="datetime" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="500" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="CompanyUrl" Type="varchar" MaxLength="500" />
+    <Property Name="isRead" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="country">
     <Key>
@@ -205,6 +230,39 @@
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="OrderPresentStatus">
+    <Key>
+      <PropertyRef Name="OrderPresentStatusID" />
+    </Key>
+    <Property Name="OrderPresentStatusID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="1000" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="createdBy" Type="bigint" Nullable="false" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="orderStatusId" />
+    </Key>
+    <Property Name="orderStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderStatus" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="packagingInformation">
+    <Key>
+      <PropertyRef Name="PackagingID" />
+    </Key>
+    <Property Name="PackagingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Packaging" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="createdBy" Type="bigint" Nullable="false" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedBy" Type="bigint" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
   <EntityType Name="productAvailableSize">
     <Key>
       <PropertyRef Name="productSizeId" />
@@ -232,6 +290,7 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+    <Property Name="ImgUrl" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="productCategoryClient">
     <Key>
@@ -260,6 +319,38 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productexcel">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="productTitle" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="slugURL" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="productCategory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="brand" Type="nvarchar(max)" />
+    <Property Name="descriptionHtml" Type="nvarchar(max)" />
+    <Property Name="materialHtml" Type="nvarchar(max)" />
+    <Property Name="productInformationHtml" Type="nvarchar(max)" />
+    <Property Name="imprintInformationHtml" Type="nvarchar(max)" />
+    <Property Name="productionHtml" Type="nvarchar(max)" />
+    <Property Name="specificationsHtml" Type="nvarchar(max)" />
+    <Property Name="ContentsHtml" Type="nvarchar(max)" />
+    <Property Name="ShippingHtml" Type="nvarchar(max)" />
+    <Property Name="pricingHtml" Type="nvarchar(max)" />
+    <Property Name="PoductionHtml" Type="nvarchar(max)" />
+    <Property Name="safetyAndCompliance" Type="nvarchar(max)" />
+    <Property Name="unit" Type="varchar" MaxLength="500" />
+    <Property Name="isShowPrice" Type="bit" />
+    <Property Name="supplier" Type="nvarchar(max)" />
+    <Property Name="productImageURL" Type="nvarchar(max)" />
+    <Property Name="productVideo" Type="nvarchar(max)" />
+    <Property Name="productColor" Type="nvarchar(max)" />
+    <Property Name="supplierMobile" Type="nvarchar(max)" />
+    <Property Name="supplierEmailAddress" Type="nvarchar(max)" />
+    <Property Name="SupplierWebsite" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="productForClient">
     <Key>
@@ -295,6 +386,7 @@
     <Property Name="isDelete" Type="bit" Nullable="false" />
     <Property Name="productSubCategoryId" Type="int" Nullable="false" />
     <Property Name="isFeaturedProduct" Type="bit" Nullable="false" />
+    <Property Name="supplierId" Type="bigint" />
   </EntityType>
   <EntityType Name="productImages">
     <Key>
@@ -313,6 +405,42 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductOrder">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderToWebClient" Type="bigint" Nullable="false" />
+    <Property Name="productId" Type="bigint" Nullable="false" />
+    <Property Name="fullName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="emailAddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="website" Type="varchar" MaxLength="500" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedBy" Type="bigint" />
+    <Property Name="orderStatusId" Type="int" Nullable="false" />
+    <Property Name="ImprintLine1" Type="nvarchar" MaxLength="500" />
+    <Property Name="ImprintLine2" Type="nvarchar" MaxLength="500" />
+    <Property Name="ImprintLine3" Type="nvarchar" MaxLength="500" />
+    <Property Name="ImprintLine4" Type="nvarchar" MaxLength="500" />
+    <Property Name="Instructions" Type="nvarchar(max)" />
+    <Property Name="Attachment1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Attachment2" Type="nvarchar" MaxLength="500" />
+    <Property Name="PackagingID" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="OrderPrice" Type="float" />
+    <Property Name="tax" Type="float" />
+    <Property Name="shippingAddress" Type="nvarchar(max)" />
+    <Property Name="location" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="cityId" Type="int" Nullable="false" />
+    <Property Name="stateId" Type="int" Nullable="false" />
+    <Property Name="countryId" Type="int" Nullable="false" />
+    <Property Name="zipcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderDeliveryExpectedDate" Type="datetime" />
+    <Property Name="orderDeliverDate" Type="datetime" />
   </EntityType>
   <EntityType Name="ProductPrice">
     <Key>
@@ -341,7 +469,7 @@
     <Property Name="productTitle" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="slugURL" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="proCategoryId" Type="int" Nullable="false" />
-    <Property Name="brandId" Type="int" Nullable="false" />
+    <Property Name="brandId" Type="int" />
     <Property Name="descriptionHtml" Type="nvarchar(max)" />
     <Property Name="materialHtml" Type="nvarchar(max)" />
     <Property Name="productInformationHtml" Type="nvarchar(max)" />
@@ -357,12 +485,13 @@
     <Property Name="isShowPrice" Type="bit" />
     <Property Name="createdBy" Type="bigint" Nullable="false" />
     <Property Name="createdDate" Type="datetime" Nullable="false" />
-    <Property Name="modifiedBy" Type="bigint" Nullable="false" />
-    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedBy" Type="bigint" />
+    <Property Name="modifiedDate" Type="datetime" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
-    <Property Name="productSubCategoryId" Type="int" Nullable="false" />
-    <Property Name="isFeaturedProduct" Type="bit" Nullable="false" />
+    <Property Name="productSubCategoryId" Type="int" />
+    <Property Name="isFeaturedProduct" Type="bit" />
+    <Property Name="supplierId" Type="bigint" />
   </EntityType>
   <EntityType Name="productSubCategory">
     <Key>
@@ -427,6 +556,7 @@
     <Property Name="modifiedDate" Type="datetime" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
+    <Property Name="stateCode" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="supplierCategory">
     <Key>
@@ -508,25 +638,25 @@
       <PropertyRef Name="userId" />
     </Key>
     <Property Name="userId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="userName" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="password" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="fullName" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="phone" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="mobile" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="emailAddress" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="website" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="address" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="location" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="cityId" Type="int" Nullable="false" />
-    <Property Name="stateId" Type="int" Nullable="false" />
-    <Property Name="countryId" Type="int" Nullable="false" />
-    <Property Name="zipcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="500" />
+    <Property Name="password" Type="varchar" MaxLength="500" />
+    <Property Name="fullName" Type="varchar" MaxLength="500" />
+    <Property Name="phone" Type="varchar" MaxLength="500" />
+    <Property Name="mobile" Type="varchar" MaxLength="500" />
+    <Property Name="emailAddress" Type="varchar" MaxLength="500" />
+    <Property Name="website" Type="varchar" MaxLength="500" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="location" Type="varchar" MaxLength="500" />
+    <Property Name="cityId" Type="int" />
+    <Property Name="stateId" Type="int" />
+    <Property Name="countryId" Type="int" />
+    <Property Name="zipcode" Type="varchar" MaxLength="50" />
     <Property Name="roleID" Type="int" Nullable="false" />
     <Property Name="otp" Type="varchar" MaxLength="500" />
     <Property Name="createdBy" Type="bigint" Nullable="false" />
     <Property Name="createdDate" Type="datetime" Nullable="false" />
-    <Property Name="modifiedBy" Type="bigint" Nullable="false" />
-    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedBy" Type="bigint" />
+    <Property Name="modifiedDate" Type="datetime" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="isDelete" Type="bit" Nullable="false" />
     <Property Name="isBlocked" Type="bit" Nullable="false" />
@@ -540,7 +670,6 @@
       <PropertyRef Name="WebClientid" />
     </Key>
     <Property Name="WebClientid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="userId" Type="bigint" Nullable="false" />
     <Property Name="supplierId" Type="bigint" Nullable="false" />
     <Property Name="createdBy" Type="bigint" Nullable="false" />
     <Property Name="createdDate" Type="datetime" Nullable="false" />
@@ -573,6 +702,9 @@
     <Parameter Name="userId" Type="bigint" Mode="In" />
     <Parameter Name="isFeatured" Type="int" Mode="In" />
   </Function>
+  <Function Name="getClientWebsiteReference_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="getFilteredUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="RoleID" Type="int" Mode="In" />
     <Parameter Name="isDeleted" Type="bit" Mode="In" />
@@ -588,6 +720,13 @@
     <Parameter Name="productCategoryId" Type="int" Mode="In" />
     <Parameter Name="productSubCategoryId" Type="int" Mode="In" />
     <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getProductList_sp_client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productOptions_All_featured" Type="int" Mode="In" />
+    <Parameter Name="productCategoryId" Type="int" Mode="In" />
+    <Parameter Name="productSubCategoryId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+    <Parameter Name="webReference" Type="int" Mode="In" />
   </Function>
   <Function Name="resetPassword_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="userId" Type="bigint" Mode="In" />
@@ -621,6 +760,15 @@
     <Parameter Name="password" Type="nvarchar" Mode="In" />
     <Parameter Name="emailAddress" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_productCRA_uploadExcel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_ProductForClient_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productId" Type="bigint" Mode="In" />
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_productOrder_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="bigint" Mode="In" />
+    <Parameter Name="orderTOWebClient" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="updateFavicon_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="faviconUrl" Type="varchar" Mode="In" />
     <Parameter Name="modifyBy" Type="bigint" Mode="In" />
@@ -628,6 +776,12 @@
   <Function Name="updateLogo_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="logoUrl" Type="varchar" Mode="In" />
     <Parameter Name="modifyBy" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="updatePramotionalBlock_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlockPramotionAdmin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="updatePramotionVideo_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="youTubePramotionAdmin" Type="varchar" Mode="In" />
   </Function>
   <EntityContainer Name="sbv_uuwebstoreModelStoreContainer">
     <EntitySet Name="ads" EntityType="Self.ads" Schema="dbo" store:Type="Tables" />
@@ -641,16 +795,22 @@
     <EntitySet Name="clientWebInformation" EntityType="Self.clientWebInformation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClientWebsiteAdsInfo" EntityType="Self.ClientWebsiteAdsInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClientWebsiteBannerInfo" EntityType="Self.ClientWebsiteBannerInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="enquiry" EntityType="Self.enquiry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="featuredCategoryReferrence" EntityType="Self.featuredCategoryReferrence" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="fontFamily" EntityType="Self.fontFamily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderPresentStatus" EntityType="Self.OrderPresentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="packagingInformation" EntityType="Self.packagingInformation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productAvailableSize" EntityType="Self.productAvailableSize" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productCategory" EntityType="Self.productCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productCategoryClient" EntityType="Self.productCategoryClient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productColor" EntityType="Self.productColor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productexcel" EntityType="Self.productexcel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productForClient" EntityType="Self.productForClient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productImages" EntityType="Self.productImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductOrder" EntityType="Self.ProductOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductPrice" EntityType="Self.ProductPrice" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productsCRA" EntityType="Self.productsCRA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="productSubCategory" EntityType="Self.productSubCategory" Schema="dbo" store:Type="Tables" />

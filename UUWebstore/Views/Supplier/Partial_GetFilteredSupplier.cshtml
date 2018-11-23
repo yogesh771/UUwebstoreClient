@@ -4,36 +4,23 @@
 <table class="table" id="tblData">
     <thead>
         <tr>
-            <th><img src="~/images/arrow.jpg" width="27" height="34"></th>
+            <th>Sr</th>
 
             <th>
-                @Html.DisplayNameFor(model => model.fullName)
+                Supplier
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.phone)
+               Contcat
             </th>
-
+         
             <th>
-                @Html.DisplayNameFor(model => model.emailAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.website)
+               Website
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.address)
-            </th>
-
+                Address
+            </th>           
             <th>
-                @Html.DisplayNameFor(model => model.cityName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.countryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.stateName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.supplierCategoryOptions)
+              Supplier Categories
             </th>
             <th></th>
         </tr>
@@ -46,7 +33,7 @@
         @if (a == 0)
         {
             <tr>
-                <td colspan="15">
+                <td colspan="7">
                     No Result Found
                 </td>
             </tr>
@@ -61,28 +48,19 @@
                     @Html.DisplayFor(modelItem => item.fullName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.phone)<br />@Html.DisplayFor(modelItem => item.mobile)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.emailAddress)
+                    @Html.DisplayFor(modelItem => item.phone)<br />@Html.DisplayFor(modelItem => item.mobile)<br />@Html.DisplayFor(modelItem => item.emailAddress)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.website)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.address)<br />@Html.DisplayFor(modelItem => item.location)<br />@Html.DisplayFor(modelItem => item.zipcode)
+                    @Html.DisplayFor(modelItem => item.address)<br />@Html.DisplayFor(modelItem => item.location)
                 </td>
-
+               
                 <td>
-                    @Html.DisplayFor(modelItem => item.cityName)
+                    @Html.DisplayFor(modelItem => item.cityName),@Html.DisplayFor(modelItem => item.stateName),  @Html.DisplayFor(modelItem => item.countryName) <br />@Html.DisplayFor(modelItem => item.zipcode)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.countryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.stateName)
-                </td>
+               
                 <td>
                     @Html.DisplayFor(modelItem => item.supplierCategoryOptions)
                 </td>

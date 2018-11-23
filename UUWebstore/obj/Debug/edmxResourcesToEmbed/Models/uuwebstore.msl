@@ -125,6 +125,127 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SelectProductCategories_sp" FunctionName="sbv_uuwebstoreModel.Store.SelectProductCategories_sp" />
     <FunctionImportMapping FunctionImportName="SelectProduct_sp" FunctionName="sbv_uuwebstoreModel.Store.SelectProduct_sp" />
+    <FunctionImportMapping FunctionImportName="getAllbannersCreatedBy_sp" FunctionName="sbv_uuwebstoreModel.Store.getAllbannersCreatedBy_sp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sbv_uuwebstoreModel.getAllbannersCreatedBy_sp_Result">
+          <ScalarProperty Name="bannerId" ColumnName="bannerId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bannerImgURL" ColumnName="bannerImgURL" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="srNumber" ColumnName="srNumber" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="modifyByName" ColumnName="modifyByName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductForClient_GetById" FunctionName="sbv_uuwebstoreModel.Store.sp_ProductForClient_GetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sbv_uuwebstoreModel.sp_ProductForClient_GetById_Result">
+          <ScalarProperty Name="productForWebClientId" ColumnName="productForWebClientId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="addedDate" ColumnName="addedDate" />
+          <ScalarProperty Name="productTitle" ColumnName="productTitle" />
+          <ScalarProperty Name="slugURL" ColumnName="slugURL" />
+          <ScalarProperty Name="proCategoryId" ColumnName="proCategoryId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="descriptionHtml" ColumnName="descriptionHtml" />
+          <ScalarProperty Name="materialHtml" ColumnName="materialHtml" />
+          <ScalarProperty Name="productInformationHtml" ColumnName="productInformationHtml" />
+          <ScalarProperty Name="imprintInformationHtml" ColumnName="imprintInformationHtml" />
+          <ScalarProperty Name="ProductionHtml" ColumnName="ProductionHtml" />
+          <ScalarProperty Name="SpecificationsHtml" ColumnName="SpecificationsHtml" />
+          <ScalarProperty Name="ContentsHtml" ColumnName="ContentsHtml" />
+          <ScalarProperty Name="ShippingHtml" ColumnName="ShippingHtml" />
+          <ScalarProperty Name="pricingHtml" ColumnName="pricingHtml" />
+          <ScalarProperty Name="PoductionHtml" ColumnName="PoductionHtml" />
+          <ScalarProperty Name="safetyAndCompliance" ColumnName="safetyAndCompliance" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="isShowPrice" ColumnName="isShowPrice" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="productSubCategoryId" ColumnName="productSubCategoryId" />
+          <ScalarProperty Name="isFeaturedProduct" ColumnName="isFeaturedProduct" />
+          <ScalarProperty Name="supplierId" ColumnName="supplierId" />
+          <ScalarProperty Name="thumbImage" ColumnName="thumbImage" />
+          <ScalarProperty Name="productImages" ColumnName="productImages" />
+          <ScalarProperty Name="productColor" ColumnName="productColor" />
+          <ScalarProperty Name="productVedio" ColumnName="productVedio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getClientWebsiteReference_sp1" FunctionName="sbv_uuwebstoreModel.Store.getClientWebsiteReference_sp" />
+    <FunctionImportMapping FunctionImportName="sp_productOrder_GetAll" FunctionName="sbv_uuwebstoreModel.Store.sp_productOrder_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sbv_uuwebstoreModel.sp_productOrder_GetAll_Result">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="orderToWebClient" ColumnName="orderToWebClient" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="orderStatusId" ColumnName="orderStatusId" />
+          <ScalarProperty Name="ImprintLine1" ColumnName="ImprintLine1" />
+          <ScalarProperty Name="ImprintLine2" ColumnName="ImprintLine2" />
+          <ScalarProperty Name="ImprintLine3" ColumnName="ImprintLine3" />
+          <ScalarProperty Name="ImprintLine4" ColumnName="ImprintLine4" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="Attachment1" ColumnName="Attachment1" />
+          <ScalarProperty Name="Attachment2" ColumnName="Attachment2" />
+          <ScalarProperty Name="PackagingID" ColumnName="PackagingID" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="stateId" ColumnName="stateId" />
+          <ScalarProperty Name="countryId" ColumnName="countryId" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="OrderDeliveryExpectedDate" ColumnName="OrderDeliveryExpectedDate" />
+          <ScalarProperty Name="orderDeliverDate" ColumnName="orderDeliverDate" />
+          <ScalarProperty Name="WebClient" ColumnName="WebClient" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="shipping_address" ColumnName="shipping_address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getProductList_sp_client" FunctionName="sbv_uuwebstoreModel.Store.getProductList_sp_client">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sbv_uuwebstoreModel.getProductList_sp_client_Result">
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="productTitle" ColumnName="productTitle" />
+          <ScalarProperty Name="slugURL" ColumnName="slugURL" />
+          <ScalarProperty Name="proCategoryId" ColumnName="proCategoryId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="imgWebAddress" ColumnName="imgWebAddress" />
+          <ScalarProperty Name="productColorId" ColumnName="productColorId" />
+          <ScalarProperty Name="colorName" ColumnName="colorName" />
+          <ScalarProperty Name="isFeaturedProduct" ColumnName="isFeaturedProduct" />
+          <ScalarProperty Name="isMySelected" ColumnName="isMySelected" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="ads">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.ad">
         <MappingFragment StoreEntitySet="ads">
@@ -237,6 +358,15 @@
     <EntitySetMapping Name="clientWebInformations">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.clientWebInformation">
         <MappingFragment StoreEntitySet="clientWebInformation">
+          <ScalarProperty Name="BlockPramotionAdmin" ColumnName="BlockPramotionAdmin" />
+          <ScalarProperty Name="youTubePramotionAdmin" ColumnName="youTubePramotionAdmin" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+          <ScalarProperty Name="pinterest" ColumnName="pinterest" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="YouTube" ColumnName="YouTube" />
+          <ScalarProperty Name="Twiter" ColumnName="Twiter" />
+          <ScalarProperty Name="GPlus" ColumnName="GPlus" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
           <ScalarProperty Name="isDelete" ColumnName="isDelete" />
           <ScalarProperty Name="isActive" ColumnName="isActive" />
           <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
@@ -289,6 +419,23 @@
           <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="bannerId" ColumnName="bannerId" />
           <ScalarProperty Name="ClientWebsiteBannerInfoid" ColumnName="ClientWebsiteBannerInfoid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.ContactU">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="CompanyUrl" ColumnName="CompanyUrl" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -345,6 +492,42 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="OrderPresentStatus">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.OrderPresentStatu">
+        <MappingFragment StoreEntitySet="OrderPresentStatus">
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderPresentStatusID" ColumnName="OrderPresentStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatus">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.OrderStatu">
+        <MappingFragment StoreEntitySet="OrderStatus">
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+          <ScalarProperty Name="orderStatusId" ColumnName="orderStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="packagingInformations">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.packagingInformation">
+        <MappingFragment StoreEntitySet="packagingInformation">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Packaging" ColumnName="Packaging" />
+          <ScalarProperty Name="PackagingID" ColumnName="PackagingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="productAvailableSizes">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.productAvailableSize">
         <MappingFragment StoreEntitySet="productAvailableSize">
@@ -364,6 +547,7 @@
     <EntitySetMapping Name="productCategories">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.productCategory">
         <MappingFragment StoreEntitySet="productCategory">
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
           <ScalarProperty Name="isDelete" ColumnName="isDelete" />
           <ScalarProperty Name="isActive" ColumnName="isActive" />
           <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
@@ -405,9 +589,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="productexcels">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.productexcel">
+        <MappingFragment StoreEntitySet="productexcel">
+          <ScalarProperty Name="SupplierWebsite" ColumnName="SupplierWebsite" />
+          <ScalarProperty Name="supplierEmailAddress" ColumnName="supplierEmailAddress" />
+          <ScalarProperty Name="supplierMobile" ColumnName="supplierMobile" />
+          <ScalarProperty Name="productColor" ColumnName="productColor" />
+          <ScalarProperty Name="productVideo" ColumnName="productVideo" />
+          <ScalarProperty Name="productImageURL" ColumnName="productImageURL" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="isShowPrice" ColumnName="isShowPrice" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="safetyAndCompliance" ColumnName="safetyAndCompliance" />
+          <ScalarProperty Name="PoductionHtml" ColumnName="PoductionHtml" />
+          <ScalarProperty Name="pricingHtml" ColumnName="pricingHtml" />
+          <ScalarProperty Name="ShippingHtml" ColumnName="ShippingHtml" />
+          <ScalarProperty Name="ContentsHtml" ColumnName="ContentsHtml" />
+          <ScalarProperty Name="specificationsHtml" ColumnName="specificationsHtml" />
+          <ScalarProperty Name="productionHtml" ColumnName="productionHtml" />
+          <ScalarProperty Name="imprintInformationHtml" ColumnName="imprintInformationHtml" />
+          <ScalarProperty Name="productInformationHtml" ColumnName="productInformationHtml" />
+          <ScalarProperty Name="materialHtml" ColumnName="materialHtml" />
+          <ScalarProperty Name="descriptionHtml" ColumnName="descriptionHtml" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="productCategory" ColumnName="productCategory" />
+          <ScalarProperty Name="slugURL" ColumnName="slugURL" />
+          <ScalarProperty Name="productTitle" ColumnName="productTitle" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="productForClients">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.productForClient">
         <MappingFragment StoreEntitySet="productForClient">
+          <ScalarProperty Name="supplierId" ColumnName="supplierId" />
           <ScalarProperty Name="isFeaturedProduct" ColumnName="isFeaturedProduct" />
           <ScalarProperty Name="productSubCategoryId" ColumnName="productSubCategoryId" />
           <ScalarProperty Name="isDelete" ColumnName="isDelete" />
@@ -460,6 +678,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ProductOrders">
+      <EntityTypeMapping TypeName="sbv_uuwebstoreModel.ProductOrder">
+        <MappingFragment StoreEntitySet="ProductOrder">
+          <ScalarProperty Name="orderDeliverDate" ColumnName="orderDeliverDate" />
+          <ScalarProperty Name="OrderDeliveryExpectedDate" ColumnName="OrderDeliveryExpectedDate" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="countryId" ColumnName="countryId" />
+          <ScalarProperty Name="stateId" ColumnName="stateId" />
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="PackagingID" ColumnName="PackagingID" />
+          <ScalarProperty Name="Attachment2" ColumnName="Attachment2" />
+          <ScalarProperty Name="Attachment1" ColumnName="Attachment1" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="ImprintLine4" ColumnName="ImprintLine4" />
+          <ScalarProperty Name="ImprintLine3" ColumnName="ImprintLine3" />
+          <ScalarProperty Name="ImprintLine2" ColumnName="ImprintLine2" />
+          <ScalarProperty Name="ImprintLine1" ColumnName="ImprintLine1" />
+          <ScalarProperty Name="orderStatusId" ColumnName="orderStatusId" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="orderToWebClient" ColumnName="orderToWebClient" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ProductPrices">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.ProductPrice">
         <MappingFragment StoreEntitySet="ProductPrice">
@@ -480,6 +735,7 @@
     <EntitySetMapping Name="productsCRAs">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.productsCRA">
         <MappingFragment StoreEntitySet="productsCRA">
+          <ScalarProperty Name="supplierId" ColumnName="supplierId" />
           <ScalarProperty Name="isFeaturedProduct" ColumnName="isFeaturedProduct" />
           <ScalarProperty Name="productSubCategoryId" ColumnName="productSubCategoryId" />
           <ScalarProperty Name="isDelete" ColumnName="isDelete" />
@@ -569,6 +825,7 @@
     <EntitySetMapping Name="states">
       <EntityTypeMapping TypeName="sbv_uuwebstoreModel.state">
         <MappingFragment StoreEntitySet="states">
+          <ScalarProperty Name="stateCode" ColumnName="stateCode" />
           <ScalarProperty Name="isDelete" ColumnName="isDelete" />
           <ScalarProperty Name="isActive" ColumnName="isActive" />
           <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
@@ -704,29 +961,12 @@
           <ScalarProperty Name="createdDate" ColumnName="createdDate" />
           <ScalarProperty Name="createdBy" ColumnName="createdBy" />
           <ScalarProperty Name="supplierId" ColumnName="supplierId" />
-          <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="WebClientid" ColumnName="WebClientid" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="getAllbannersCreatedBy_sp" FunctionName="sbv_uuwebstoreModel.Store.getAllbannersCreatedBy_sp">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="sbv_uuwebstoreModel.getAllbannersCreatedBy_sp_Result">
-          <ScalarProperty Name="bannerId" ColumnName="bannerId" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="bannerImgURL" ColumnName="bannerImgURL" />
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
-          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
-          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
-          <ScalarProperty Name="isActive" ColumnName="isActive" />
-          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
-          <ScalarProperty Name="srNumber" ColumnName="srNumber" />
-          <ScalarProperty Name="fullName" ColumnName="fullName" />
-          <ScalarProperty Name="modifyByName" ColumnName="modifyByName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_productCRA_uploadExcel" FunctionName="sbv_uuwebstoreModel.Store.sp_productCRA_uploadExcel" />
+    <FunctionImportMapping FunctionImportName="updatePramotionalBlock_sp" FunctionName="sbv_uuwebstoreModel.Store.updatePramotionalBlock_sp" />
+    <FunctionImportMapping FunctionImportName="updatePramotionVideo_sp" FunctionName="sbv_uuwebstoreModel.Store.updatePramotionVideo_sp" />
   </EntityContainerMapping>
 </Mapping>

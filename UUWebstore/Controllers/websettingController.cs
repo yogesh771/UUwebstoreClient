@@ -63,11 +63,7 @@ namespace UUWebstore.Controllers
             {
                 obanner.bannerImgURL = UploadFile(file, "/bannersImg");
             }
-            else
-            {
-                TempData["result"] = "Please upload banner image";
-                return View(obanner);
-            }
+            
             if (_IsettingServices.uploadBanner(obanner) == 1)
             {
                 TempData["result"] = "Banner updated. ";
@@ -93,13 +89,7 @@ namespace UUWebstore.Controllers
              //1 for Product category 2 for product 
             return _IsettingServices.SaveAdminFeaturedReferrence(categoryType, ddl_filter_AutoAll);           
         }
-
-
-        //public ActionResult ProductCategories()
-        //{
-        //    return View(_IsettingServices.GetAllProductCategories(0,0));
-
-        //}
+        
         public int SelectProductCategories(int productCategoryId, bool chk)
         {
             return _IsettingServices.SelectProductCategories(productCategoryId, chk);
@@ -139,6 +129,32 @@ namespace UUWebstore.Controllers
         {
             TempData["result"] = _IsettingServices.UpdateAboutUsHtmlContent(contactInformation.AboutUsHtmlContent);
             return View();
+        }
+
+        public ActionResult SocailMedia()
+        {
+            var oSocailMedia = new SocailMedia();
+            var ClientWebsite = _IsettingServices.getClientWebsiteReference();
+            oSocailMedia.Facebook= ClientWebsite.Where(e => e.Type == "Facebook").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.GPlus = ClientWebsite.Where(e => e.Type == "GPlus").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.Twiter = ClientWebsite.Where(e => e.Type == "Twiter").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.YouTube = ClientWebsite.Where(e => e.Type == "YouTube").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.Instagram = ClientWebsite.Where(e => e.Type == "Instagram").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.pinterest = ClientWebsite.Where(e => e.Type == "pinterest").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            oSocailMedia.LinkedIn = ClientWebsite.Where(e => e.Type == "LinkedIn").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+            return View(oSocailMedia);
+        }
+        [HttpPost]
+        public ActionResult SocailMedia(SocailMedia oSocailMedia)
+        {
+            if (_IsettingServices.UpdateSocialMedia(oSocailMedia) > 0)
+            {
+                ViewBag.message = "ok";
+            }
+            else{
+                ViewBag.message = "no";
+            }
+            return View(oSocailMedia);
         }
     }
 }

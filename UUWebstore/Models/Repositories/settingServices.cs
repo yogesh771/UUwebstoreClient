@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
-using System.Web;
 using UUWebstore.Models.IRepositories;
 
 namespace UUWebstore.Models.Repositories
@@ -46,6 +45,13 @@ namespace UUWebstore.Models.Repositories
         {
             return uow.banner_.GetByID(bannerId);
         }
+        public List<getAllProductCategories_sp_Result> GetAllProductCategoriesForUser()
+        {
+            var param_userid = new SqlParameter("@userid", Convert.ToInt32(BaseUtil.GetWebConfigValue("ClientID")));
+            var param_featuredOption = new SqlParameter("@featuredOption", "0");
+            var res = uow.sp_LoginUser_Result_.SQLQuery<getAllProductCategories_sp_Result>("getAllProductCategories_sp @userid, @featuredOption", param_userid, param_featuredOption).ToList();
+            return res;
+        }
         public List<getAllProductCategories_sp_Result> GetAllProductCategories(int ddl_filter, int ddl_filter_AutoAll)
         {
             var param_featuredOption = new SqlParameter("@featuredOption", ddl_filter);
@@ -60,7 +66,7 @@ namespace UUWebstore.Models.Repositories
                 }
                 else if (ddl_filter_AutoAll == 2)
                 {
-                    param_userid = new SqlParameter("@userid", 1);
+                    param_userid = new SqlParameter("@userid", Convert.ToInt32(BaseUtil.GetWebConfigValue("AdminID")));
                     return uow.sp_LoginUser_Result_.SQLQuery<getAllProductCategories_sp_Result>("getAllProductCategories_sp @userid, @featuredOption", param_userid, param_featuredOption).ToList();
                 }
             else
@@ -155,13 +161,13 @@ namespace UUWebstore.Models.Repositories
 
         public string  GetContactUsHml()
         {
-            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()));
+            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) != "" ? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) : BaseUtil.GetWebConfigValue("ClientID"));
             var contactUs=uow.clientWebInformation_.Find(e => e.userId == userID).Select(e=> new{e.contactUsPageContent }).FirstOrDefault();
             return contactUs.contactUsPageContent;
         }
         public int UpdateContactUsHml(string Content)
         {
-            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()));
+            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) != "" ? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) : BaseUtil.GetWebConfigValue("ClientID"));
             var contactUs = uow.clientWebInformation_.SingleOrDefault(e => e.userId == userID);
             contactUs.contactUsPageContent = Content;
             uow.clientWebInformation_.Update(contactUs);
@@ -169,7 +175,8 @@ namespace UUWebstore.Models.Repositories
         }
         public string GetAboutUsHtmlContent()
         {
-            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()));
+           
+            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString())!=""? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()): BaseUtil.GetWebConfigValue("ClientID"));
             var aboutUsPageContent = uow.clientWebInformation_.Find(e => e.userId == userID).Select(e => new { e.aboutUsPageContent }).FirstOrDefault();
             return aboutUsPageContent.aboutUsPageContent;
         }
@@ -181,9 +188,23 @@ namespace UUWebstore.Models.Repositories
             uow.clientWebInformation_.Update(aboutUsPageContent);
             return 1;
         }
-        public string GetHomePageHtmlContent()
+        public int UpdateSocialMedia(SocailMedia oSocailMedia)
         {
             var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()));
+            var aboutUsPageContent = uow.clientWebInformation_.SingleOrDefault(e => e.userId == userID);
+            aboutUsPageContent.Facebook = oSocailMedia.Facebook;
+            aboutUsPageContent.LinkedIn = oSocailMedia.LinkedIn;
+            aboutUsPageContent.GPlus = oSocailMedia.GPlus;
+            aboutUsPageContent.Instagram = oSocailMedia.Instagram;
+            aboutUsPageContent.pinterest = oSocailMedia.pinterest;
+            aboutUsPageContent.Twiter = oSocailMedia.Twiter;
+            aboutUsPageContent.YouTube = oSocailMedia.YouTube;
+            uow.clientWebInformation_.Update(aboutUsPageContent);
+            return 1;
+        }
+        public string GetHomePageHtmlContent()
+        {
+            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) != "" ? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) : BaseUtil.GetWebConfigValue("ClientID"));
             var homePageContent = uow.clientWebInformation_.Find(e => e.userId == userID).Select(e => new { e.homePageContent }).FirstOrDefault();
             return homePageContent.homePageContent;
         }
@@ -195,6 +216,11 @@ namespace UUWebstore.Models.Repositories
             uow.clientWebInformation_.Update(homePageContent);
             return 1;
         }
-
+        public List<getClientWebsiteReference_sp_Result> getClientWebsiteReference()
+        {
+            var userId = new SqlParameter("@userId", Convert.ToInt32(BaseUtil.GetWebConfigValue("ClientID")));
+            var result = uow.sp_LoginUser_Result_.SQLQuery<getClientWebsiteReference_sp_Result>("getClientWebsiteReference_sp @userId", userId).ToList();
+            return result;
+        }
     }
 }

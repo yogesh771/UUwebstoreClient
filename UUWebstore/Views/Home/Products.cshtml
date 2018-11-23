@@ -1,0 +1,144 @@
+﻿@using UUWebstore.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(@BaseUtil.GetApplicationPath()/images/heading-pages-02.jpg);">
+    <h2 class="l-text2 t-center">
+        Women
+    </h2>
+    <p class="m-text13 t-center">
+        New Arrivals Women Collection 2018
+    </p>
+</section>
+
+
+<!-- Content page -->
+<section class="bgwhite p-t-55 p-b-65">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+                <div class="leftbar p-r-20 p-r-0-sm">
+                    <!--  -->
+                    <h4 class="m-text14 p-b-7">
+                        Categories
+                    </h4>
+
+                    <ul class="p-b-54">
+                        <li class="p-t-4">
+                            <a href="#" class="s-text13 active1"  onclick="searchResult(0,0)">
+                                All
+                            </a>
+                        </li>
+                       
+                        @{ foreach (var item in ViewBag.categories)
+                            {
+                                <li class="p-t-4">
+                                    <a href="#" class="s-text13" onclick="searchResult(@item.productCategoryId,0)">
+                                      <input type="hidden" id="hdn"@item.productCategoryId />  @item.name
+                                    </a>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+
+                 
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+                
+                <div id="products"></div>
+                <!-- Pagination -->
+                <div class="pagination flex-m flex-w p-t-26" id="paginationDiv">
+                    <a href="#" onclick="pagination('decr')"  id="paginationDivPrv">&lt;&lt; Previous</a>
+                    <a href="#" onclick="pagination('incr')"  id="paginationDivNext">Next &gt;&gt;</a>
+                    <input type="hidden" id="hdn_category" value="" />
+                </div>
+
+
+               
+                </div>
+            </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+    <div id="dropDownSelect2"></div>
+    <script type="text/javascript" src="@BaseUtil.GetApplicationPath()/vendor/select2/select2.min.js"></script>
+    <script type="text/javascript">
+		$(".selection-1").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect2')
+		});
+    </script>
+</section>
+@{  var u = "";
+    if (TempData["category"] != null)
+    { u = TempData["category"].ToString(); }
+    var ProductReference = ViewBag.ProductReference;
+  }
+<script>   
+    $(document).ready(function () {
+        debugger
+        if("@u"!="")
+        {
+            searchResult('@u',0)
+        }
+        else
+        {
+            searchResult(0,0)
+        }
+
+    })
+
+</script>
+
+<script>
+    var pageCount = 0;
+    function pagination(action)
+    {
+        debugger
+        $('#paginationDiv').css('display', 'none');
+        if (action == 'incr')
+        {  pageCount++;
+            searchResult($('#hdn_category').val(), pageCount)
+        }
+        if (action == 'decr' && pageCount > 0) {           
+            pageCount--;
+            searchResult($('#hdn_category').val(), pageCount)
+        }      
+        $('#paginationDiv').css('display', 'block');
+    }
+</script>
+<script>   
+    function searchResult(productCategoryId,pageNumber) {
+       debugger
+        $('#hdn_category').val(productCategoryId);
+        $.ajax({
+            url: '@BaseUtil.GetApplicationPath()/Home/partial_Products',
+            type: 'POST',
+            data: { 'productCategoryId': productCategoryId, 'webReference': @ProductReference, 'pageNumber': pageNumber, 'pageSize': 3 },
+            success: function (data) {
+                debugger
+                if (data != "") {
+                    $('#products').html(data);                   
+                }
+                else {
+                    $('#products').html("<h4>No more records found</h4>");                  
+                }
+            },
+            error: function () {
+                bootbox.alert({
+                    title: "Alert !",
+                    message: '<p>Whooaaa! Something went wrong..</p>',
+                    timeOut: 2000
+
+                });
+
+            }
+        });
+    }
+</script>

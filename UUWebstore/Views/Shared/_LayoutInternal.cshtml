@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
-
+@using UUWebstore.Models;
+@{ var logo = BaseUtil.WebSettings().Where(e => e.Type == "logo").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;
+    var favicon = BaseUtil.WebSettings().Where(e => e.Type == "favicon").Select(e => new { e.imgWebAddress }).FirstOrDefault().imgWebAddress;  }
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -8,35 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>UU Webstore</title>
-    <!-- Bootstrap Core CSS -->
-
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <!-- MetisMenu CSS -->
-    <link href="~/content/theme/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="~/content/theme/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="~/content/theme/vendor/morrisjs/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
+    <title>UU Webstore</title>  
+    <link rel="shortcut icon" type="image/x-icon" href="@favicon">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />    
+	<link href="~/Content/custom.css" rel="stylesheet" />
+    <link href="~/content/theme/vendor/metisMenu/metisMenu.min.css" rel="stylesheet"> 
+    <link href="~/content/theme/dist/css/sb-admin-2.css" rel="stylesheet">   
     <link href="~/content/theme/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="~/content/theme/vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
     <link href="~/Content/slimtable.css" rel="stylesheet" />
-    <script src="~/Scripts/slimtable.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/bootbox.min.js"></script>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+   
+    <script src="~/Scripts/slimtable.js"></script>   
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>    
+  
     <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="~/content/theme/vendor/metisMenu/metisMenu.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="~/content/theme/vendor/raphael/raphael.min.js"></script>
-    <script src="~/content/theme/vendor/morrisjs/morris.min.js"></script>
-    <script src="~/content/theme/data/morris-data.js"></script>
-    <!-- Custom Theme JavaScript -->
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>   
+    <script src="~/content/theme/vendor/metisMenu/metisMenu.min.js"></script>    
     <script src="~/content/theme/dist/js/sb-admin-2.js"></script>
 </head>
 <body>
@@ -50,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand"  href='@Url.Action("Index","Account")'><img src="@logo" alt="LOGO" /></a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
@@ -250,17 +240,15 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <a href='@Url.Action("profile","account")'><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li>
-                            <a href='@Url.Action("availablebanners","websetting")'> Banners</a>
-                        </li>
+                       
                         <li>
                             <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <a href='@Url.Action("LogOut","account")'><i class="fa fa-sign-out fa-fw"></i>Log Out</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -277,9 +265,9 @@
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Themes Settings<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
+                                @*<li>
                                     <a href='@Url.Action("Index","theme")'>Themes</a>
-                                </li>
+                                </li>*@
                                 <li>
                                     <a href='@Url.Action("browseLogo","theme")'>Logo</a>
                                 </li>
@@ -299,26 +287,43 @@
                                 <li>
                                     <a href='@Url.Action("AllProductCategories","websetting")'>Product Categories</a>
                                 </li>
+                               
                                 <li>
-                                    <a href='@Url.Action("HomePage","websetting")'>Home Page Content</a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("ContactUs","websetting")'>Contact Us Page Content</a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("AllProductCategories","websetting")'>Product Categories</a>
+                                    <a href='@Url.Action("Index","Products")'>Products</a>
                                 </li> 
 
                                 <li>
                                     <a href='@Url.Action("Index","Supplier")'> Suppliers</a>
                                 </li>           
-
+                                @*<li>
+                                    <a href='@Url.Action("HomePage","websetting")'>Home Page Content</a>
+                                </li>*@
                                 <li>
-                                    <a href='@Url.Action("Index","Products")'> Reset Password</a>
-                                </li>           
+                                    <a href='@Url.Action("ContactUs","websetting")'>Contact Us Page Content</a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("AboutUs","websetting")'>About Us</a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("SocailMedia","websetting")'>Socail Media</a>
+                                </li>
+                                       
                          </ul>                          
                         </li>
-                       
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quotation & Inquiry<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href='@Url.Action("Index","Quates")'>All Quotation</a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("Contacts","ContactUs")'>All Inquiries</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Account<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -327,101 +332,11 @@
                                 </li>
                                 <li>
                                     <a href='@Url.Action("reset_password","account")'> Reset Password</a>
-                                </li>
-
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
+                                </li>                              
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                    
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -446,7 +361,7 @@
         {
 
               $.ajax({
-                  url: '/account/fillState',
+                  url: '@BaseUtil.GetApplicationPath()' + '/account/fillState',
             type: 'GET',
             data: { 'countryID': countryID },
             success: function (result) {
@@ -477,7 +392,7 @@
         if (stateId != "") {
 
             $.ajax({
-                url: '/account/fillCity',
+                url: '@BaseUtil.GetApplicationPath()' + '/account/fillCity',
                 type: 'GET',
                 data: { 'stateId': stateId },
                 success: function (result) {
@@ -522,7 +437,7 @@
         });
     });
 </script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 <script>

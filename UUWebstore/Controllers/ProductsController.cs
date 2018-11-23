@@ -46,15 +46,10 @@ namespace UUWebstore.Controllers
             var result = javaScriptSerializer.Serialize(_IProductServices.GetClientProductCategories(ddl_filter).Select(e => new { e.proCategoryId, e.name }));
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-        public ActionResult Partial_SearchProductsReult(int productOptions_All_featured, int productCategoryId, int productSubCategoryId, Int16 cateoryDDlValue)
+        public ActionResult Partial_SearchProductsReult(int productOptions_All_featured, int productCategoryId, int productSubCategoryId, Int16 cateoryDDlValue,int webReference,int pageNumber, int pageSize)
         {
-            var userID = 0;
-            if (cateoryDDlValue == 0) userID = 0;
-
-            if (cateoryDDlValue == 1) userID = Convert.ToInt32(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()));
-            if (cateoryDDlValue == 2) userID = 1;
-
-                return PartialView("Partial_SearchProductsReult", _IProductServices.SearchProductsReult(productOptions_All_featured, productCategoryId,  productSubCategoryId, userID));
+            var userID =  Convert.ToInt32(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) != "" ? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) : BaseUtil.GetWebConfigValue("ClientID"));
+            return PartialView("Partial_SearchProductsReult", _IProductServices.SearchProductsReult(productOptions_All_featured, productCategoryId,  productSubCategoryId, userID, webReference, pageNumber, pageSize));
         }
         public bool makeFeaturedProduct(Int64 productId, bool chk)
         {

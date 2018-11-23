@@ -15,7 +15,6 @@ namespace UUWebstore.Models
     public partial class WebClientSupplier
     {
         public long WebClientid { get; set; }
-        public long userId { get; set; }
         public long supplierId { get; set; }
         public long createdBy { get; set; }
         public System.DateTime createdDate { get; set; }

@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Net;
-using System.Net.Mail;
 using System.Text;
 using System.Web.Mvc;
 using System.Globalization;
 using System.Reflection;
 using System.Web.Routing;
-using System.Data.Entity;
 using System.Security.Cryptography;
 using System.IO;
-using System.Diagnostics;
 using UUWebstore.Models.Repositories;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -273,7 +269,11 @@ namespace UUWebstore.Models
         {
             get { return Context.Request; }
         }
-
+        public static IEnumerable<getClientWebsiteReference_sp_Result> WebSettings()
+        {
+            var _IsettingServices = new settingServices();
+          return   _IsettingServices.getClientWebsiteReference();
+        }
 
         public static UrlHelper GetUrlHelper()
         {

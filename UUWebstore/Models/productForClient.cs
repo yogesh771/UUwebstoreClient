@@ -44,5 +44,6 @@ namespace UUWebstore.Models
         public bool isDelete { get; set; }
         public int productSubCategoryId { get; set; }
         public bool isFeaturedProduct { get; set; }
+        public Nullable<long> supplierId { get; set; }
     }
 }

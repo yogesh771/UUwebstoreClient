@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using UUWebstore.Models.IRepositories;
-using UUWebstore.Models;
 using System.IO;
 
 namespace UUWebstore.Models.Repositories

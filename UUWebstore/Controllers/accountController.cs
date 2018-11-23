@@ -106,9 +106,10 @@ namespace UUWebstore.Controllers
                 ViewBag.cityId = new SelectList(_IStateServices.getAllCityByStateId(0).Select(e => new { e.cityId, e.CityName }), "cityId", "CityName");
             }
         }
-        public ActionResult profile(Int64 userID)
+        public ActionResult profile()
         {
             fillddl();
+            var userID = Convert.ToInt64(BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) != "" ? BaseUtil.GetSessionValue(AdminInfo.LoginID.ToString()) : BaseUtil.GetWebConfigValue("ClientID"));
             var user = _IAccountServices.getUserById(userID);
            
             return View(user);
@@ -151,5 +152,10 @@ namespace UUWebstore.Controllers
             string result = javaScriptSerializer.Serialize(_IStateServices.getAllCityByStateId(stateId).Select(e => new { e.cityId, e.CityName }));
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-    }
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login");
+        }
+        }
 }

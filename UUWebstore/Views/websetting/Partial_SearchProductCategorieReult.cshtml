@@ -1,24 +1,17 @@
 ﻿@model IEnumerable<UUWebstore.Models.getAllProductCategories_sp_Result>
 <link href="~/Content/slimtable.css" rel="stylesheet" />
 <script src="~/Scripts/slimtable.js"></script>
+@using UUWebstore.Models;
 <table class="table" id="tblData">
     <thead>
         <tr>
-            <th><img src="~/images/arrow.jpg" width="27" height="34"></th>
+            <th>Sr</th>
             <th>
-                @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.createdByName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.modifiedByName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.isActive)
-            </th>
-            <th>Include In list</th>
-            <th>Featured</th>
+              Category
+            </th>          
+          
+            <th>My list</th>
+            @*<th>Featured</th>*@
         </tr>
     </thead>
     @{
@@ -29,7 +22,7 @@
         @if (a == 0)
         {
             <tr>
-                <td colspan="12">
+                <td colspan="3">
                     No Result Found
                 </td>
             </tr>
@@ -42,21 +35,13 @@
                 <td>@(i += 1)</td>
                 <td>
                     @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.createdByName)<br />@Html.DisplayFor(modelItem => item.createdDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.modifiedByName)<br />@Html.DisplayFor(modelItem => item.modifiedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.isActive)
-                </td>
+                </td>               
+               
                 <td><input type="checkbox" id='chk1_@item.productCategoryId' onclick="SelectSupplier(@item.productCategoryId)" @(Convert.ToBoolean(@item.proCategoryClientId) == true ? "checked='checked'" : string.Empty) /></td>
-                <td>
+                @*<td>
                     <input type="checkbox" id='chk_@item.productCategoryId' onclick="makeFeaturedCategory(@item.productCategoryId,@item.proCategoryClientId)" @(Convert.ToBoolean(@item.isFeaturedCategory) == true ? "checked='checked'" : string.Empty) />
 
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>
@@ -71,30 +56,30 @@
         }
         debugger
         $.ajax({
-            url: '/websetting/makeFeaturedCategory',
+            url: '@BaseUtil.GetApplicationPath()/websetting/makeFeaturedCategory',
             type: 'POST',
             data: { 'chk': chk, 'productCategoryId': id, 'proCategoryClientId': proCategoryClientId },
             success: function (data) {
-                if (data == 1)
-                {
-                    bootbox.alert({
-                        title: "Success !",
+                    if (data == 1)
+                    {
+                        bootbox.alert({
+                            title: "Success !",
                         message: '<p>Product featured category updated.</p>',
                         timeOut: 2000
-
+    
                     });
-                }
-            },
+                    }
+                },
             error: function () {
-                bootbox.alert({
-                    title: "Alert !",
+                    bootbox.alert({
+                        title: "Alert !",
                     message: '<p>Whooaaa! Something went wrong..</p>',
                     timeOut: 2000
-
+    
                 });
 
-            }
-        });
+                }
+            });
 
     }
 </script>
@@ -127,7 +112,7 @@
         }
         debugger
         $.ajax({
-            url: '/websetting/SelectProductCategories',
+            url: '@BaseUtil.GetApplicationPath()/websetting/SelectProductCategories',
             type: 'POST',
             data: { 'productCategoryId': id, 'chk': chk },
             success: function (data) {

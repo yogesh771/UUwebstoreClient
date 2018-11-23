@@ -1,6 +1,8 @@
 ﻿@model UUWebstore.Models.banner
-
-
+@using UUWebstore.Models;
+@{
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
 @using (Html.BeginForm("Edit", "websetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()

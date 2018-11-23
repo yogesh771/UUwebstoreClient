@@ -1,0 +1,71 @@
+﻿@model IEnumerable<UUWebstore.Models.ContactU>
+
+@{
+    ViewBag.Title = "Contacts";
+    Layout = "~/Views/Shared/_LayoutInternal.cshtml";
+}
+
+<h2>Contacts</h2>
+
+<table class="table" id="tblData">
+    <thead>
+        <tr>
+            <th>Sr</th>
+            <th>
+              Contact Name
+            </th>
+            <th>
+              Company Name
+            </th>
+            <th>
+             Title
+            </th>
+            <th>
+              Message
+            </th>
+
+            <th>
+           Date
+            </th>
+           
+    </thead>
+    @{
+        var a = Model.Count();
+
+    }
+    <tbody>
+        @if (a == 0)
+        {
+            <tr>
+                <td colspan="12">
+                    No Result Found
+                </td>
+            </tr>
+        }
+        @{  int i = 0; }
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@(i += 1)</td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactPerson)<br />@Html.DisplayFor(modelItem => item.ContactNumber)<br />@Html.DisplayFor(modelItem => item.ContactEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)<br />@Html.DisplayFor(modelItem => item.CompanyUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>               
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdate)
+                </td>
+               
+            </tr>
+        }
+</tbody>
+</table>
